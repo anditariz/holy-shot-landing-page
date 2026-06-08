@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOLY SHOT! — Sip it like you mean it</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="index.html"><img src="assets/img/logo.png" alt="Holy Shot!" class="nav-logo" /></a>
+        <a href="#" class="nav-brand">HOLY <span>SHOT!</span></a>
+        <ul class="nav-links">
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#products">Produk</a></li>
+          <li><a href="#bundling">Bundling</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
+          <li><a href="#order" class="btn-nav">Pesan Sekarang</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" onclick="closeMenu()">Tentang</a>
+      <a href="#products" onclick="closeMenu()">Produk</a>
+      <a href="#bundling" onclick="closeMenu()">Bundling</a>
+      <a href="#testimoni" onclick="closeMenu()">Testimoni</a>
+      <a href="#order" onclick="closeMenu()">Pesan Sekarang</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-logo-wrap">
+        <img src="assets/img/logo.png" alt="Holy Shot!" class="hero-logo" />
+      </div>
+
+      <div class="logo-text-brand">
+        <span class="logo-holy">HOLY</span>
+        <span class="logo-shot">SHOT!</span>
+        <span class="logo-dip">Sip it like you mean it!</span>
+      </div>
+      <p class="hero-sub" style="margin-top: 16px">Jamu Segar Alami &bull; Tanpa Gula Tambahan &bull; 100% Bahan Pilihan</p>
+      <div class="preorder-badge">Sistem Pre-Order &bull; Dibuat Fresh Setelah Pesan</div>
+      <a href="#products" class="btn-hero">Jelajahi Produk</a>
+      <div class="scroll-hint">Scroll untuk menjelajahi</div>
+    </section>
+
+    <!-- PRE-ORDER BANNER -->
+    <section class="preorder-section">
+      <div class="container">
+        <div class="preorder-grid">
+          <div class="reveal">
+            <div class="preorder-icon"></div>
+            <h4 class="preorder-step-title">1. Pesan Dulu</h4>
+            <p class="preorder-step-desc">Pilih produk dan checkout via WhatsApp. Kami akan konfirmasi ketersediaan dan total harga.</p>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <div class="preorder-icon"></div>
+            <h4 class="preorder-step-title">2. Kami Buatkan</h4>
+            <p class="preorder-step-desc">Setiap pesanan dibuat fresh setelah order dikonfirmasi. Tanpa stok lama, tanpa pengawet.</p>
+          </div>
+          <div class="reveal reveal-delay-2">
+            <div class="preorder-icon"></div>
+            <h4 class="preorder-step-title">3. Kirim / Ambil</h4>
+            <p class="preorder-step-desc">Produk dikirim atau bisa diambil langsung. Ongkir dihitung via WhatsApp sesuai lokasi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <span class="section-tag">Tentang Kami</span>
+            <h2 class="section-title">Kesehatan Dimulai<br />Dari Sini.</h2>
+            <p>
+              Holy Shot! lahir dari keyakinan sederhana: kesehatan bisa dimulai dari segelas jus segar setiap hari. Setiap botol kami dibuat dengan 100% bahan alami pilihan — tanpa pengawet, tanpa pemanis buatan, tanpa gula tambahan. Hanya
+              buah, sayur, dan rempah segar yang diproses dengan penuh dedikasi untuk tubuhmu.
+            </p>
+            <p>
+              Kami menggunakan sistem <strong>pre-order</strong> — setiap pesanan dibuat fresh setelah dikonfirmasi. Tidak ada stok lama, tidak ada pengawet. Begitu kamu pesan, kami baru mulai meracik. Itulah mengapa setiap botol Holy Shot!
+              selalu segar dan berkualitas.
+            </p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Bahan Alami</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">0%</div>
+                <div class="stat-label">Gula Tambahan</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">5+</div>
+                <div class="stat-label">Varian Rasa</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-image-placeholder reveal reveal-delay-2">
+            <img src="assets/img/product.jpeg" alt="About Holy Shot!" class="about-image" />
+            <!-- <span class="about-emoji">🍊</span>
+          <span>FOTO BRAND / PRODUK</span>
+          <span class="about-ph-sub">Ganti dengan foto brand</span> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEPACHE -->
+<section class="tepache-section" id="tepache">
+  <div class="container">
+    <div class="tepache-badge reveal">
+      <span class="tepache-new-tag">NEW</span>
+      <span class="tepache-obsession-text">MEET OUR NEWEST OBSESSION</span>
+    </div>
+
+    <div class="tepache-hero reveal">
+      <h2 class="tepache-title">
+        <span class="tepache-title-main">TEPACHE</span>
+      </h2>
+      <p class="tepache-tagline">
+        Minuman fermentasi nanas yang segar, sedikit <em>sparkling</em>,
+        dan kaya probiotik alami.
+      </p>
+    </div>
+
+    <div class="tepache-grid">
+      <div class="tepache-visual reveal">
+        <div class="tepache-bottle-wrap">
+          <img
+            src="assets/img/tepache.png"
+            alt="Tepache — Fermented Pineapple Drink"
+            class="tepache-bottle-img"
+          />
+          <div class="tepache-sparkle tepache-sparkle-1"></div>
+          <div class="tepache-sparkle tepache-sparkle-2"></div>
+          <div class="tepache-sparkle tepache-sparkle-3"></div>
+          <div class="tepache-sparkle tepache-sparkle-4"></div>
+          <div class="tepache-sparkle tepache-sparkle-5"></div>
+        </div>
+      </div>
+
+      <div class="tepache-details">
+        <div class="tepache-benefits reveal">
+          <div class="tepache-benefit-item">
+            <span class="tepache-benefit-icon">✦</span>
+            <div>
+              <strong>Bantu Pencernaan</strong>
+              <p>Probiotik alami dari fermentasi membantu menjaga keseimbangan flora usus.</p>
+            </div>
+          </div>
+          <div class="tepache-benefit-item">
+            <span class="tepache-benefit-icon">✦</span>
+            <div>
+              <strong>Perut Lebih Nyaman</strong>
+              <p>Rasa asam segar yang menenangkan perut dan mengurangi kembung.</p>
+            </div>
+          </div>
+          <div class="tepache-benefit-item">
+            <span class="tepache-benefit-icon">✦</span>
+            <div>
+              <strong>Kesehatan Usus & Kulit</strong>
+              <p>Probiotik dan vitamin C dari nanas fermentasi mendukung usus sehat dan kulit bercahaya.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="tepache-flavor-note reveal">
+          Enak, <em>refreshing</em>, dan bikin badan berasa <strong>"thank you."</strong>
+        </p>
+
+        <div class="tepache-product-card reveal">
+          <span class="product-tag tag-tepache">Tepache</span>
+          <span class="preorder-label">Pre-Order — Dibuat Fresh</span>
+          <p class="product-ingredients">Nanas fermentasi, rempah pilihan &bull; Tanpa gula tambahan &bull; Kaya probiotik</p>
+          <div class="product-price-row">
+            <div class="price-chip tepache-price"><span class="size">250ml</span> Rp 28.000</div>
+            <div class="price-chip tepache-price"><span class="size">500ml</span> Rp 50.000</div>
+          </div>
+          <a href="#order" class="btn-tepache-order">Pesan Tepache Sekarang</a>
+        </div>
+
+        <div class="tepache-welcome reveal">
+          Welcome to the <strong>Tepache era.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- SHOT! SERIES -->
+    <section class="products-section" id="products">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Shot! Series</span>
+          <h2 class="section-title">Pilihan Rasa Segar</h2>
+          <p class="section-desc center">Dibuat fresh tanpa gula tambahan. Setiap botol adalah kombinasi sempurna dari buah, sayur, dan rempah pilihan.</p>
+        </div>
+
+        <!-- Gingr Shot! -->
+        <div class="product-row reveal gjuice-bg">
+          <div class="product-image-wrap">
+            <div class="product-image-placeholder ph-orange">
+              <img src="assets/img/gingr-shot.jpeg" alt="Gingr Shot!" class="product-image" />
+              <!-- <div class="ph-label">GINGR<br>SHOT!</div>
+            <div class="ph-sub">500ml / 1000ml</div>
+            <div class="ph-note"></div> -->
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-tag tag-orange">Shot! Series</span>
+            <h3 class="product-name">Gingr Shot!</h3>
+            <span class="preorder-label">Pre-Order — Dibuat Fresh</span>
+            <p class="product-ingredients">Jahe, Kunyit, Jeruk, Lemon &bull; Tanpa gula tambahan, hanya air</p>
+            <p class="product-desc">Shot jahe klasik yang jadi andalan. Perpaduan jahe dan kunyit dengan sentuhan jeruk dan lemon memberikan energi alami untuk memulai harimu.</p>
+            <ul class="product-benefits">
+              <li>Melancarkan siklus menstruasi dan meredakan nyeri haid</li>
+              <li>Meningkatkan daya tahan tubuh dan metabolisme</li>
+              <li>Mendukung kesuburan dengan antioksidan pelindung sel</li>
+              <li>Anti-aging alami dan membantu detoks tubuh</li>
+            </ul>
+            <div class="product-price-row">
+              <div class="price-chip"><span class="size">500ml</span> Rp 38.000</div>
+              <div class="price-chip"><span class="size">1000ml</span> Rp 75.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Glow Shot! -->
+        <div class="product-row reverse reveal">
+          <div class="product-image-wrap">
+            <div class="product-image-placeholder ph-gold">
+              <img src="assets/img/glow-shot.jpeg" alt="Glow Shot!" class="product-image" />
+              <!-- <div class="ph-label">GLOW<br>SHOT!</div>
+            <div class="ph-sub">500ml / 1000ml</div>
+            <div class="ph-note">Ganti dengan foto produk</div> -->
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-tag tag-gold">Shot! Series</span>
+            <h3 class="product-name">Glow Shot!</h3>
+            <span class="preorder-label">Pre-Order — Dibuat Fresh</span>
+            <p class="product-ingredients">Wortel, Jeruk, Lemon, Jahe (sedikit) &bull; Tanpa gula tambahan, hanya air</p>
+            <p class="product-desc">Rahasia kulit glowing dari dalam. Kombinasi wortel kaya beta-karoten dengan jeruk dan lemon untuk kulit yang lebih cerah dan sehat.</p>
+            <ul class="product-benefits">
+              <li>Mencerahkan kulit dengan beta-karoten dan vitamin A</li>
+              <li>Melembapkan dan membuat kulit lebih halus</li>
+              <li>Mengurangi minyak berlebih dan meredakan kemerahan</li>
+              <li>Melawan tanda penuaan dengan antioksidan tinggi</li>
+            </ul>
+            <div class="product-price-row">
+              <div class="price-chip"><span class="size">500ml</span> Rp 38.000</div>
+              <div class="price-chip"><span class="size">1000ml</span> Rp 75.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- G-Juice! -->
+        <div class="product-row reveal gjuice-bg">
+          <div class="product-image-wrap">
+            <div class="product-image-placeholder ph-green">
+              <img src="assets/img/GJuice.jpeg" alt="G-Juice!" class="product-image" />
+              <!-- <div class="ph-label">G<br>JUICE!</div>
+            <div class="ph-sub">500ml / 1000ml</div>
+            <div class="ph-note">Ganti dengan foto produk</div> -->
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-tag tag-green">Shot! Series</span>
+            <h3 class="product-name">G-Juice!</h3>
+            <span class="preorder-label">Pre-Order — Dibuat Fresh</span>
+            <p class="product-ingredients">Celery, Nanas, Apel, Jeruk, Lemon, Bok Choy, Jahe (sedikit) &bull; Tanpa gula tambahan, hanya air</p>
+            <p class="product-desc">Super juice untuk detoks dan energi. Kombinasi lengkap buah dan sayuran hijau yang membersihkan tubuh dari dalam sekaligus memberikan boost energi alami.</p>
+            <ul class="product-benefits">
+              <li>Detoks dan dukung fungsi hati dengan celery dan bok choy</li>
+              <li>Boost imun tinggi vitamin C dari jeruk dan lemon</li>
+              <li>Lancarkan pencernaan dengan enzim bromelain dari nanas</li>
+              <li>Hidrasi kulit dari dalam dengan antioksidan buah segar</li>
+            </ul>
+            <div class="product-price-row">
+              <div class="price-chip"><span class="size">500ml</span> Rp 48.000</div>
+              <div class="price-chip"><span class="size">1000ml</span> Rp 95.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Morning Juice! -->
+        <div class="product-row reverse reveal">
+          <div class="product-image-wrap">
+            <div class="product-image-placeholder ph-yellow">
+              <img src="assets/img/morning-juice.jpeg" alt="About Holy Shot!" class="about-image" />
+              <!-- <div class="ph-label">MORNING<br>JUICE!</div>
+            <div class="ph-sub">500ml / 1000ml</div>
+            <div class="ph-note">Ganti dengan foto produk</div> -->
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-tag tag-yellow">Shot! Series</span>
+            <h3 class="product-name">Morning Juice!</h3>
+            <span class="preorder-label">Pre-Order — Dibuat Fresh</span>
+            <p class="product-ingredients">Nanas, Timun, Wortel &bull; Tanpa gula tambahan, hanya air</p>
+            <p class="product-desc">Jus pagi yang menyegarkan untuk memulai hari. Rasa ringan dan segar dari kombinasi nanas, timun, dan wortel — sempurna untuk rutinitas pagimu.</p>
+            <ul class="product-benefits">
+              <li>Hidrasi optimal dengan kandungan air tinggi dari timun</li>
+              <li>Pencernaan lancar berkat serat dan enzim alami</li>
+              <li>Kesehatan mata dan kulit dari beta-karoten wortel</li>
+              <li>Rendah kalori, cocok sebagai pendamping diet sehat</li>
+            </ul>
+            <div class="product-price-row">
+              <div class="price-chip"><span class="size">500ml</span> Rp 38.000</div>
+              <div class="price-chip"><span class="size">1000ml</span> Rp 75.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloody Shot! -->
+        <div class="product-row reveal bloody-bg">
+          <div class="product-image-wrap">
+            <div class="product-image-placeholder ph-maroon">
+              <img src="assets/img/bloody-punch.jpeg" alt="About Holy Shot!" class="about-image" />
+              <!-- <div class="ph-label">BLOODY<br>SHOT!</div>
+            <div class="ph-sub">500ml / 1000ml</div>
+            <div class="ph-note">Ganti dengan foto produk</div> -->
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-tag tag-maroon">Shot! Series</span>
+            <h3 class="product-name">Bloody Shot!</h3>
+            <span class="preorder-label">Pre-Order — Dibuat Fresh</span>
+            <p class="product-ingredients">Beetroot, Apel, Nanas, Jeruk, Lemon &bull; Tanpa gula tambahan, hanya air</p>
+            <p class="product-desc">Power shot dengan beetroot sebagai bintangnya. Kombinasi buah dan sayuran yang kaya vitamin C untuk kulit glowing dan tubuh yang lebih bertenaga.</p>
+            <ul class="product-benefits">
+              <li>Detoks darah dengan beetroot untuk kulit lebih bersih dan cerah</li>
+              <li>Boost kolagen tinggi vitamin C dari nanas, jeruk, dan lemon</li>
+              <li>Lancarkan aliran darah dan tingkatkan stamina</li>
+              <li>Bantu pencernaan dengan serat dan enzim dari apel dan nanas</li>
+            </ul>
+            <div class="product-price-row">
+              <div class="price-chip"><span class="size">500ml</span> Rp 43.000</div>
+              <div class="price-chip"><span class="size">1000ml</span> Rp 85.000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PURE SERIES -->
+    <section class="pure-section" id="pure-series">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Pure Series</span>
+          <h2 class="section-title">100% Pure Ingredients</h2>
+          <p class="section-desc center">Versi lebih kecil, tetap murni. Sempurna untuk dicoba pertama kali atau sebagai daily shot.</p>
+        </div>
+        <div class="pure-grid">
+          <div class="pure-card reveal">
+            <div class="pure-card-icon ph-orange"><img src="assets/img/gingr-shot.jpeg" alt="About Holy Shot!" class="pure-card-icon ph-maroon" /></div>
+            <h4>Ginger Bold</h4>
+            <span class="preorder-label dark">Pre-Order</span>
+            <p class="pure-ingredients">Ginger, orange, lemon, turmeric</p>
+            <div class="pure-prices">
+              <div class="pure-price-row"><span class="pp-size">250ml</span><span class="pp-price">Rp 37.000</span></div>
+              <div class="pure-price-row"><span class="pp-size">500ml</span><span class="pp-price">Rp 73.000</span></div>
+            </div>
+          </div>
+          <div class="pure-card reveal reveal-delay-1">
+            <div class="pure-card-icon ph-gold"><img src="assets/img/glow-aura.jpeg" alt="About Holy Shot!" class="pure-card-icon ph-maroon" /></div>
+            <h4>Glow Aura</h4>
+            <span class="preorder-label dark">Pre-Order</span>
+            <p class="pure-ingredients">Carrot, orange, lemon, a bit ginger</p>
+            <div class="pure-prices">
+              <div class="pure-price-row"><span class="pp-size">250ml</span><span class="pp-price">Rp 37.000</span></div>
+              <div class="pure-price-row"><span class="pp-size">500ml</span><span class="pp-price">Rp 73.000</span></div>
+            </div>
+          </div>
+          <div class="pure-card reveal reveal-delay-2">
+            <div class="pure-card-icon ph-green"><img src="assets/img/GJuice.jpeg" alt="About Holy Shot!" class="pure-card-icon ph-maroon" /></div>
+            <h4>G-Power!</h4>
+            <span class="preorder-label dark">Pre-Order</span>
+            <p class="pure-ingredients">Celery, apple, orange, lemon, pineapple, baby bok choy, a bit ginger</p>
+            <div class="pure-prices">
+              <div class="pure-price-row"><span class="pp-size">250ml</span><span class="pp-price">Rp 42.000</span></div>
+              <div class="pure-price-row"><span class="pp-size">500ml</span><span class="pp-price">Rp 83.000</span></div>
+            </div>
+          </div>
+          <div class="pure-card reveal">
+            <div class="pure-card-icon ph-yellow"><img src="assets/img/morning-kick.jpeg" alt="About Holy Shot!" class="pure-card-icon ph-maroon" /></div>
+            <h4>Morning Kick</h4>
+            <span class="preorder-label dark">Pre-Order</span>
+            <p class="pure-ingredients">Pineapple, cucumber, carrot</p>
+            <div class="pure-prices">
+              <div class="pure-price-row"><span class="pp-size">250ml</span><span class="pp-price">Rp 32.000</span></div>
+              <div class="pure-price-row"><span class="pp-size">500ml</span><span class="pp-price">Rp 63.000</span></div>
+            </div>
+          </div>
+          <div class="pure-card reveal reveal-delay-1">
+            <div class="pure-card-icon ph-maroon"><img src="assets/img/bloody-punch.jpeg" alt="About Holy Shot!" class="pure-card-icon ph-maroon" /></div>
+            <h4>Bloody Punch!</h4>
+            <span class="preorder-label dark">Pre-Order</span>
+            <p class="pure-ingredients">Beetroot, pineapple, apple, carrot, lemon</p>
+            <div class="pure-prices">
+              <div class="pure-price-row"><span class="pp-size">250ml</span><span class="pp-price">Rp 37.000</span></div>
+              <div class="pure-price-row"><span class="pp-size">500ml</span><span class="pp-price">Rp 73.000</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUNDLING -->
+    <section class="bundling-section" id="bundling">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Bundling</span>
+          <h2 class="section-title">Paket Hemat</h2>
+          <p class="section-desc center">Lebih banyak, lebih hemat. Pilih paket bundling yang sesuai kebutuhanmu.</p>
+        </div>
+        <div class="bundle-grid">
+          <div class="bundle-card bundle-yellow reveal">
+            <div class="bundle-name">Small A</div>
+            <ul class="bundle-items">
+              <li><span>Gingr Shot 500ml</span></li>
+              <li><span>Glow Shot 500ml</span></li>
+            </ul>
+            <div class="bundle-price">Rp 124.000</div>
+          </div>
+
+          <div class="bundle-card bundle-green reveal reveal-delay-1">
+            <div class="bundle-name">Small B</div>
+            <ul class="bundle-items">
+              <li><span>Gingr Shot 500ml</span></li>
+              <li><span>Glow Shot 500ml</span></li>
+              <li><span>G-Juice 500ml</span></li>
+            </ul>
+            <div class="bundle-price">Rp 205.000</div>
+          </div>
+
+          <div class="bundle-card bundle-orange reveal reveal-delay-2">
+            <div class="bundle-name">Big A</div>
+            <ul class="bundle-items">
+              <li><span>Gingr Shot 1000ml</span></li>
+              <li><span>Glow Shot 1000ml</span></li>
+              <li><span>G-Juice 1000ml</span></li>
+            </ul>
+            <div class="bundle-price">Rp 245.000</div>
+          </div>
+
+          <div class="bundle-card bundle-maroon reveal">
+            <div class="bundle-name">All I Want is BIG</div>
+            <ul class="bundle-items">
+              <li><span>Gingr Shot 1000ml</span></li>
+              <li><span>Glow Shot 1000ml</span></li>
+              <li><span>G-Juice 1000ml</span></li>
+              <li><span>Bloody Shot 1000ml</span></li>
+              <li><span>Morning Juice 1000ml</span></li>
+            </ul>
+            <div class="bundle-price">Rp 405.000</div>
+          </div>
+
+          <div class="bundle-card bundle-green reveal reveal-delay-1">
+            <div class="bundle-name">Ginger Haters</div>
+            <ul class="bundle-items">
+              <li><span>Bloody Shot 500ml</span></li>
+              <li><span>Morning Juice 500ml</span></li>
+            </ul>
+            <div class="bundle-price">Rp 81.000</div>
+          </div>
+
+          <div class="bundle-card bundle-yellow reveal reveal-delay-2">
+            <div class="bundle-name">Ginger Addict</div>
+            <ul class="bundle-items">
+              <li><span>Gingr Shot 1000ml</span></li>
+              <li><span>2 botol varian lain</span></li>
+            </ul>
+            <div class="bundle-price">Rp 150.000</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO CONSUME -->
+    <section class="how-section" id="how-to">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Cara Konsumsi</span>
+          <h2 class="section-title">Tips Minum Holy Shot!</h2>
+        </div>
+        <div class="how-grid">
+          <div class="how-card reveal">
+            <div class="how-icon"></div>
+            <h4>Takaran</h4>
+            <p>50–100ml per sekali minum. Cukup konsumsi sehari sekali.</p>
+          </div>
+          <div class="how-card reveal reveal-delay-1">
+            <div class="how-icon"></div>
+            <h4>Waktu Terbaik</h4>
+            <p>Pagi hari saat perut kosong, sebelum makan. Jika punya asam lambung, sesuaikan dengan kondisi tubuh.</p>
+          </div>
+          <div class="how-card reveal reveal-delay-2">
+            <div class="how-icon"></div>
+            <h4>Kocok Dahulu</h4>
+            <p>Sari buah mudah mengendap di dasar botol. Kocok sebelum minum untuk hasil terbaik.</p>
+          </div>
+          <div class="how-card reveal reveal-delay-3">
+            <div class="how-icon"></div>
+            <h4>Simpan di Kulkas</h4>
+            <p>Shot! Series tahan 3–12 hari di kulkas. Bisa lebih lama jika disimpan di freezer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testi-section" id="testimoni">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Testimoni</span>
+          <h2 class="section-title">Apa Kata Mereka</h2>
+          <p class="section-desc center">Cerita nyata dari mereka yang sudah merasakan manfaat Holy Shot!</p>
+        </div>
+        <div class="testi-grid">
+          <div class="testi-card reveal">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"Awalnya coba Gingr Shot karena penasaran, ternyata rutin minum seminggu badan berasa lebih enteng dan pencernaan membaik. Sekarang sudah langganan!"</p>
+            <div class="testi-name">Rina M.</div>
+            <div class="testi-role">Pelanggan setia — Jakarta</div>
+          </div>
+          <div class="testi-card reveal reveal-delay-1">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"Glow Shot bikin kulit aku beneran lebih cerah setelah rutin 2 minggu. Rasanya juga enak, nggak kayak jamu biasa. Highly recommended!"</p>
+            <div class="testi-name">Salsa A.</div>
+            <div class="testi-role">Beauty enthusiast — Bandung</div>
+          </div>
+          <div class="testi-card reveal reveal-delay-2">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"Morning Juice jadi ritual pagi aku sekarang. Segar banget, bikin mood bagus dari pagi. Anak-anak juga suka!"</p>
+            <div class="testi-name">Dewi K.</div>
+            <div class="testi-role">Ibu rumah tangga — Surabaya</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER FORM -->
+    <section class="order-section" id="order">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Pesan</span>
+          <h2 class="section-title">Pesan Sekarang</h2>
+          <p class="section-desc center">
+            Holy Shot! menggunakan sistem <strong>Pre-Order</strong>. Pilih produk favoritmu, tambahkan ke keranjang, lalu checkout via WhatsApp. Setelah order dikonfirmasi, kami akan membuatkan produkmu secara fresh. Pembayaran dan ongkir
+            diatur via chat.
+          </p>
+        </div>
+        <div class="order-wrap reveal">
+          <!-- PILIH PRODUK -->
+          <div style="margin-bottom: 0">
+            <span class="section-tag" style="margin-bottom: 16px">Tambah Produk</span>
+          </div>
+          <div class="form-group" style="margin-top: 16px">
+            <label for="product">Pilih Produk</label>
+            <select id="product">
+              <option value="" disabled selected>-- Pilih produk --</option>
+              <optgroup label="Tepache (250ml & 500ml)">
+                <option value="Tepache">Tepache</option>
+                </optgroup>
+              <optgroup label="Shot! Series (500ml & 1000ml)">
+                <option value="Gingr Shot">Gingr Shot!</option>
+                <option value="Glow Shot">Glow Shot!</option>
+                <option value="G-Juice">G-Juice!</option>
+                <option value="Morning Juice">Morning Juice!</option>
+                <option value="Bloody Shot">Bloody Shot!</option>
+              </optgroup>
+              <optgroup label="Pure Series (250ml & 500ml)">
+                <option value="Ginger Bold">Ginger Bold</option>
+                <option value="Glow Aura">Glow Aura</option>
+                <option value="G-Power">G-Power!</option>
+                <option value="Morning Kick">Morning Kick</option>
+                <option value="Bloody Punch">Bloody Punch!</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label for="size">Ukuran</label>
+              <select id="size" disabled>
+                <option value="" disabled selected>-- Ukuran --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="qty">Jumlah</label>
+              <input type="number" id="qty" min="1" value="1" placeholder="1" />
+            </div>
+            <button type="button" class="btn-add" id="btnAdd" onclick="addToCart()">+ Tambah</button>
+          </div>
+
+          <!-- KERANJANG -->
+          <div class="cart-section">
+            <div class="cart-title">
+              Keranjang Belanja
+              <span class="cart-count" id="cartCount">🛒</span>
+            </div>
+            <div id="cartContent">
+              <div class="cart-empty">Keranjang masih kosong. Tambahkan produk di atas.</div>
+            </div>
+          </div>
+
+          <!-- INFO CUSTOMER -->
+          <div class="customer-section">
+            <span class="section-tag" style="margin-bottom: 16px">Info Pemesan</span>
+            <div class="form-row" style="margin-top: 16px">
+              <div class="form-group">
+                <label for="custName">Nama Lengkap</label>
+                <input type="text" id="custName" placeholder="Nama kamu" />
+              </div>
+              <div class="form-group">
+                <label for="custAddress">Alamat (opsional)</label>
+                <input type="text" id="custAddress" placeholder="Alamat pengiriman" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="custNote">Catatan (opsional)</label>
+              <input type="text" id="custNote" placeholder="Misal: tanpa es, kirim siang hari, dll." />
+            </div>
+          </div>
+
+          <button type="button" class="btn-whatsapp" id="btnCheckout" onclick="checkoutWhatsApp()" disabled>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+            Checkout via WhatsApp
+          </button>
+          <p class="form-note">Pembayaran dan pengiriman (termasuk ongkir) akan diatur via WhatsApp.</p>
+
+          <!-- PRE-ORDER NOTE -->
+          <div class="preorder-note">
+            <span class="preorder-note-icon">📋</span>
+            <div>
+              <strong class="preorder-note-title">Sistem Pre-Order</strong>
+              <span class="preorder-note-desc"> Produk dibuat fresh setelah pesanan dikonfirmasi. Estimasi pembuatan 1–2 hari. Admin akan menginformasikan jadwal pengiriman atau pengambilan via WhatsApp. </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <!-- Ganti dengan: <img src="images/logo.png" alt="Holy Shot!" style="height:36px; margin-bottom:12px;"> -->
+            <div class="footer-brand">HOLY <span>SHOT!</span></div>
+            <p class="footer-desc">Minuman sehat alami tanpa gula tambahan. Dibuat segar dengan 100% bahan pilihan untuk tubuh yang lebih sehat setiap hari.</p>
+          </div>
+          <div class="footer-col">
+            <h5>Produk</h5>
+            <a href="#products">Shot! Series</a>
+            <a href="#pure-series">Pure Series</a>
+            <a href="#bundling">Bundling</a>
+          </div>
+          <div class="footer-col">
+            <h5>Hubungi Kami</h5>
+            <a href="https://instagram.com/yourholyshot" target="_blank">Instagram: @yourholyshot</a>
+            <a href="https://wa.me/62895378053509" target="_blank">WhatsApp Admin: +6282228051397</a>
+          </div>
+        </div>
+        <div class="footer-bottom">&copy; 2025 Holy Shot! — All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
