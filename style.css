@@ -18,7 +18,7 @@
   --green: #2d6b4f;
   --green-light: #e8f5ee;
   --text: #1a1a1a;
-  --text-muted: #6b6b6b;
+  --text-muted: #897575;
   --text-light: #9a9a9a;
   --radius: 16px;
   --radius-sm: 10px;
@@ -431,15 +431,12 @@ img {
 .tepache-section {
   position: relative;
   padding: 100px 0 120px;
-  background:
-    radial-gradient(ellipse at 15% 30%, rgba(212, 145, 56, 0.08) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 70%, rgba(198, 107, 38, 0.06) 0%, transparent 50%),
-    var(--bg, #0d0d0d);
+  background: radial-gradient(ellipse at 15% 30%, rgba(212, 145, 56, 0.08) 0%, transparent 55%), radial-gradient(ellipse at 85% 70%, rgba(198, 107, 38, 0.06) 0%, transparent 50%), var(--bg, #0d0d0d);
   overflow: hidden;
 }
 
 .tepache-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -449,7 +446,7 @@ img {
 }
 
 .tepache-section::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -472,7 +469,7 @@ img {
   padding: 4px 16px;
   background: linear-gradient(135deg, #d49138, #c66b26);
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 800;
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -482,12 +479,17 @@ img {
 }
 
 @keyframes tepacheGlow {
-  0%, 100% { box-shadow: 0 0 8px rgba(212, 145, 56, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(212, 145, 56, 0.6); }
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(212, 145, 56, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(212, 145, 56, 0.6);
+  }
 }
 
 .tepache-obsession-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 13px;
   letter-spacing: 0.22em;
@@ -507,7 +509,7 @@ img {
 }
 
 .tepache-title-main {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 800;
   font-size: clamp(56px, 10vw, 110px);
   letter-spacing: -0.02em;
@@ -520,7 +522,7 @@ img {
 }
 
 .tepache-title-main::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 10%;
@@ -531,7 +533,7 @@ img {
 }
 
 .tepache-tagline {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: clamp(15px, 2vw, 19px);
   color: rgb(254, 217, 79);
@@ -590,14 +592,45 @@ img {
   animation: tepacheBubble 3s ease-in-out infinite;
 }
 
-.tepache-sparkle-1 { top: 15%; left: 20%; animation-delay: 0s; width: 5px; height: 5px; }
-.tepache-sparkle-2 { top: 35%; right: 15%; animation-delay: 0.6s; width: 4px; height: 4px; }
-.tepache-sparkle-3 { top: 55%; left: 30%; animation-delay: 1.2s; width: 7px; height: 7px; }
-.tepache-sparkle-4 { top: 25%; left: 50%; animation-delay: 1.8s; width: 3px; height: 3px; }
-.tepache-sparkle-5 { top: 70%; right: 25%; animation-delay: 2.4s; width: 5px; height: 5px; }
+.tepache-sparkle-1 {
+  top: 15%;
+  left: 20%;
+  animation-delay: 0s;
+  width: 5px;
+  height: 5px;
+}
+.tepache-sparkle-2 {
+  top: 35%;
+  right: 15%;
+  animation-delay: 0.6s;
+  width: 4px;
+  height: 4px;
+}
+.tepache-sparkle-3 {
+  top: 55%;
+  left: 30%;
+  animation-delay: 1.2s;
+  width: 7px;
+  height: 7px;
+}
+.tepache-sparkle-4 {
+  top: 25%;
+  left: 50%;
+  animation-delay: 1.8s;
+  width: 3px;
+  height: 3px;
+}
+.tepache-sparkle-5 {
+  top: 70%;
+  right: 25%;
+  animation-delay: 2.4s;
+  width: 5px;
+  height: 5px;
+}
 
 @keyframes tepacheBubble {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0;
     transform: translateY(0) scale(0.5);
   }
@@ -641,7 +674,7 @@ img {
 
 .tepache-benefit-item strong {
   display: block;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 15px;
   color: rgba(254, 174, 14, 0.949);
@@ -649,7 +682,7 @@ img {
 }
 
 .tepache-benefit-item p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 13px;
   color: rgba(254, 174, 14, 0.949);
@@ -659,7 +692,7 @@ img {
 
 /* Flavor Note */
 .tepache-flavor-note {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 15px;
   color: rgba(254, 174, 14, 0.949);
@@ -701,13 +734,16 @@ img {
   padding: 12px 28px;
   background: linear-gradient(135deg, #d49138, #a85520);
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.04em;
   text-decoration: none;
   border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    letter-spacing 0.3s ease;
 }
 
 .btn-tepache-order:hover {
@@ -718,7 +754,7 @@ img {
 
 /* Welcome line */
 .tepache-welcome {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 14px;
   color: rgba(240, 236, 228, 0.35);
@@ -870,15 +906,23 @@ img {
 }
 
 .gjuice-bg {
-    background-color: #F2B341;
-    border-radius: 24px;
-    padding: 60px;
+  background-color: #f2b341;
+  border-radius: 24px;
+  padding: 60px;
+}
+
+.gjuice-bg,
+.gjuice-bg .product-name,
+.gjuice-bg .product-desc,
+.gjuice-bg .product-ingredients,
+.gjuice-bg .product-benefits li {
+  color: #ffeeee;
 }
 
 .bloody-bg {
-    background-color: #88172B;
-    border-radius: 24px;
-    padding: 60px;
+  background-color: #88172b;
+  border-radius: 24px;
+  padding: 60px;
 }
 
 .bloody-bg,
@@ -886,7 +930,7 @@ img {
 .bloody-bg .product-desc,
 .bloody-bg .product-ingredients,
 .bloody-bg .product-benefits li {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .product-name {
@@ -908,8 +952,8 @@ img {
   margin-bottom: 8px;
 }
 .preorder-label.dark {
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 140, 0, 0.834);
+  color: rgba(89, 8, 8, 0.908);
   font-size: 0.6rem;
   margin-bottom: 12px;
 }
@@ -958,7 +1002,7 @@ img {
   padding: 10px 20px;
   border-radius: var(--radius-sm);
   background: var(--surface);
-  border: 1.5px solid #e8e8e8;
+  border: 1.5px solid #d4d1d1;
   transition: border-color 0.2s ease;
 }
 .price-chip:hover {
@@ -966,8 +1010,14 @@ img {
 }
 .price-chip .size {
   font-weight: 400;
-  color: var(--text-muted);
+  /* color: var(--text-muted); */
+  color: #0a0a0a;
   font-size: 0.78rem;
+}
+
+.price-chip .price {
+  color: #111;
+  font-weight: 700;
 }
 
 /* ===== PURE SERIES ===== */
@@ -977,7 +1027,7 @@ img {
   color: #000;
 }
 .pure-section .section-tag {
-  background: rgba(0, 0, 0, 0.06);
+  background: rgb(169, 30, 30);
 }
 .pure-section .section-title {
   color: #000;
@@ -991,15 +1041,15 @@ img {
   gap: 20px;
 }
 .pure-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.908);
+  border: 1px solid rgb(179, 41, 41);
   border-radius: var(--radius);
   padding: 28px 20px;
   text-align: center;
   transition: all 0.3s ease;
 }
 .pure-card:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(159, 238, 95, 0.867);
   border-color: var(--yellow);
   transform: translateY(-4px);
 }
@@ -1020,7 +1070,7 @@ img {
 .pure-card .pure-ingredients {
   font-style: italic;
   font-size: 0.75rem;
-  color: #88172B;
+  color: #88172b;
   margin-bottom: 16px;
   line-height: 1.5;
 }
@@ -1028,7 +1078,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  color: #88172B;
+  color: #88172b;
   font-weight: 800;
 }
 .pure-price-row {
@@ -1037,18 +1087,18 @@ img {
   font-family: "Poppins", sans-serif;
   font-size: 0.82rem;
   padding: 6px 12px;
-  color: #88172B;
+  color: #88172b;
   font-weight: 800;
   border-radius: 8px;
 }
 .pure-price-row .pp-size {
   font-weight: 400;
-  color: #88172B;
+  color: #88172b;
   font-weight: 800;
 }
 .pure-price-row .pp-price {
   font-weight: 700;
-  color: #88172B;
+  color: #88172b;
   font-weight: 800;
 }
 
@@ -1084,6 +1134,14 @@ img {
   right: 0;
   height: 4px;
 }
+
+.bundle-desc {
+  color: #ffffff;
+  max-width: 660px;
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
 .bundle-card.bundle-yellow::before {
   background: var(--yellow);
 }
@@ -1124,6 +1182,47 @@ img {
   color: var(--yellow);
 }
 
+.bundle-price{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.old-price{
+    font-size: 1rem;
+    color: #999;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.new-price{
+    font-size: 2rem;
+    color: #e0af00;
+    font-weight: 800;
+}
+
+.discount-badge{
+    background: #ff4444;
+    color: white;
+    width: fit-content;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.old-price{
+    color: #999;
+    text-decoration: line-through;
+    font-size: 1rem;
+}
+
+.new-price{
+    color: #e0af00;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
 /* ===== HOW TO ===== */
 .how-section {
   padding: 80px 0;
@@ -1152,6 +1251,82 @@ img {
 .how-card p {
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+
+/* Timeline Layout */
+.timeline-wrapper {
+  position: relative;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #b8e986, transparent);
+  transform: translateX(-50%);
+}
+
+.timeline-step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline-step-left {
+  justify-content: flex-start;
+}
+
+.timeline-step-right {
+  justify-content: flex-end;
+}
+
+.step-content-left {
+  width: 50%;
+  padding-right: 3rem;
+  text-align: right;
+}
+
+.step-content-right {
+  width: 50%;
+  padding-left: 3rem;
+  text-align: left;
+}
+
+.step-spacer {
+  width: 50%;
+}
+
+.timeline-circle {
+  position: absolute;
+  left: 50%;
+  top: 1.2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #b8e986;
+  background: #0a0f0a;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.9rem;
+  color: #b8e986;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.how-card {
+  display: inline-block;
+}
+
+.how-card.align-left {
+  text-align: left;
 }
 
 /* ===== TESTIMONIALS ===== */

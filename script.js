@@ -1,15 +1,23 @@
     // ===== PRICE DATA =====
 const prices = {
+  "Tepache":       { "250ml": 15000, "500ml": 27000 },
   "Gingr Shot":    { "500ml": 38000, "1000ml": 75000 },
   "Glow Shot":     { "500ml": 38000, "1000ml": 75000 },
-  "G-Juice":       { "500ml": 48000, "1000ml": 95000 },
+  "G-Juice":       { "500ml": 47000, "1000ml": 93000 },
   "Morning Juice": { "500ml": 38000, "1000ml": 75000 },
   "Bloody Shot":   { "500ml": 43000, "1000ml": 85000 },
   "Ginger Bold":   { "250ml": 37000, "500ml": 73000 },
   "Glow Aura":     { "250ml": 37000, "500ml": 73000 },
   "G-Power":       { "250ml": 42000, "500ml": 83000 },
   "Morning Kick":  { "250ml": 32000, "500ml": 63000 },
-  "Bloody Punch":  { "250ml": 37000, "500ml": 73000 }
+  "Bloody Punch":  { "250ml": 37000, "500ml": 73000 },
+  "Small A":          { "Small A": 119000 },
+  "Small B":          { "Small B": 195000 },
+  "Ginger Hater":    { "Ginger Hater": 75000 },
+  "Big A":            { "Big A": 230000 },
+  "All I Want is BIG":{ "All I Want is BIG": 390000 },
+  "Ginger Haters+":    { "Ginger Haters": 155000 },
+  "Ginger Addict":    { "Ginger Addict": 145000 }
 };
 
 // ===== CART =====
@@ -144,23 +152,23 @@ function checkoutWhatsApp() {
     itemsText += `${i + 1}. *${item.product}*\n   Ukuran: ${item.size}\n   Jumlah: ${item.qty}\n   Subtotal: Rp ${item.total.toLocaleString('id-ID')}\n\n`;
   });
 
-  let message = `Halo Holy Shot! 👋\nSaya ingin memesan:\n\n`;
+  let message = `Halo Holy Shot!\nSaya ingin memesan:\n\n`;
   message += itemsText;
-  message += `💰 *Total: Rp ${grandTotal.toLocaleString('id-ID')}*\n\n`;
-  message += `👤 *Nama:* ${name}\n`;
+  message += `*Total: Rp ${grandTotal.toLocaleString('id-ID')}*\n\n`;
+  message += `*Nama:* ${name}\n`;
 
   if (address) {
-    message += `📍 *Alamat:* ${address}\n`;
+    message += `*Alamat:* ${address}\n`;
   }
   if (note) {
-    message += `📝 *Catatan:* ${note}\n`;
+    message += `*Catatan:* ${note}\n`;
   }
 
-  message += `\n📋 *Catatan: Sistem Pre-Order*\n`;
+  message += `\n*Catatan: Sistem Pre-Order*\n`;
   message += `Mohon info ketersediaan, estimasi pembuatan, dan ongkirnya. Terima kasih!`;
 
   const encoded = encodeURIComponent(message);
-  window.open(`https://wa.me/62895378053509?text=${encoded}`, '_blank');
+  window.open(`https://wa.me/6282228051397?text=${encoded}`, '_blank');
 }
 
 // ===== NAVBAR SCROLL =====
@@ -197,16 +205,5 @@ const observer = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => observer.observe(el));
 
-// Di dalam objek harga produk (sesuaikan dengan struktur yang ada)
-const priceData = {
-  // ... produk lain yang sudah ada ...
-  "Tepache": {
-    "250ml": 28000,
-    "500ml": 50000
-  }
-};
 
-// Di dalam logika select ukuran (sizeOptions / event listener)
-// Tambahkan opsi ukuran untuk Tepache:
-// "Tepache": ["250ml", "500ml"]
 
