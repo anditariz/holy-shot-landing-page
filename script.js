@@ -205,5 +205,187 @@ const observer = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => observer.observe(el));
 
+/* =========================================
+   TESTIMONI & ULASAN — MERGED FUNCTIONALITY
+   ========================================= */
 
+// ---- Tab Switching ----
+function switchTab(tabName) {
+  const tabs = document.querySelectorAll('.tu-tab');
+  const contents = document.querySelectorAll('.tu-content');
+  const indicator = document.getElementById('tuTabIndicator');
+
+  tabs.forEach(t => t.classList.remove('active'));
+  contents.forEach(c => {
+    c.classList.remove('tu-content--active');
+    c.style.display = 'none';
+  });
+
+  const targetTab = document.querySelector(`.tu-tab[data-tab="${tabName}"]`);
+  const targetContent = document.getElementById(`tab-${tabName}`);
+
+  targetTab.classList.add('active');
+  targetContent.style.display = 'block';
+
+  // Trigger reflow for animation
+  requestAnimationFrame(() => {
+    targetContent.classList.add('tu-content--active');
+  });
+
+  // Move indicator
+  if (tabName === 'ulasan') {
+    indicator.classList.add('right');
+  } else {
+    indicator.classList.remove('right');
+  }
+}
+
+// Initialize tab display on load
+document.addEventListener('DOMContentLoaded', () => {
+  const defaultContent = document.getElementById('tab-testimoni');
+  if (defaultContent) {
+    defaultContent.style.display = 'block';
+  }
+});
+
+// ---- Star Rating ----
+const starRatingEl = document.getElementById('starRating');
+const reviewRatingInput = document.getElementById('reviewRating');
+const ratingLabel = document.getElementById('ratingLabel');
+const stars = document.querySelectorAll('.tu-star');
+const ratingLabels = ['', 'Kurang', 'Cukup', 'Bagus', 'Sangat Bagus', 'Luar Biasa!'];
+
+if (starRatingEl) {
+  stars.forEach(star => {
+    star.addEventListener('mouseenter', () => {
+      const val = parseInt(star.dataset.value);
+      stars.forEach(s => {
+        s.classList.remove('hovered');
+        if (parseInt(s.dataset.value) <= val) {
+          s.classList.add('hovered');
+        }
+      });
+    });
+
+    star.addEventListener('click', () => {
+      const val = parseInt(star.dataset.value);
+      reviewRatingInput.value = val;
+      stars.forEach(s => {
+        s.classList.remove('active', 'hovered');
+        if (parseInt(s.dataset.value) <= val) {
+          s.classList.add('active');
+        }
+      });
+      if (ratingLabel) {
+        ratingLabel.textContent = ratingLabels[val];
+      }
+    });
+  });
+
+  starRatingEl.addEventListener('mouseleave', () => {
+    stars.forEach(s => s.classList.remove('hovered'));
+  });
+}
+
+// ---- Character Counter ----
+const reviewTextEl = document.getElementById('reviewText');
+const charCountEl = document.getElementById('charCount');
+
+if (reviewTextEl && charCountEl) {
+  reviewTextEl.addEventListener('input', () => {
+    const len = reviewTextEl.value.length;
+    charCountEl.textContent = len;
+    if (len > 300) {
+      reviewTextEl.value = reviewTextEl.value.substring(0, 300);
+      charCountEl.textContent = 300;
+    }
+    charCountEl.style.color = len >= 280 ? '#ae2012' : '';
+  });
+}
+
+// ---- Submit Review ----
+function submitReview() {
+  const product = document.getElementById('reviewProduct').value;
+  const name = document.getElementById('reviewerName').value.trim();
+  const city = document.getElementById('reviewerCity').value.trim();
+  const rating = parseInt(document.getElementById('reviewRating').value);
+  const text = document.getElementById('reviewText').value.trim();
+
+  // Validation
+  if (!product) return showToast('Pilih produk yang ingin diulas.', 'error');
+  if (!name) return showToast('Masukkan nama kamu.', 'error');
+  if (rating === 0) return showToast('Beri rating bintang terlebih dahulu.', 'error');
+  if (!text) return showToast('Tulis ulasanmu terlebih dahulu.', 'error');
+  if (text.length < 10) return showToast('Ulasan terlalu pendek, tulis minimal 10 karakter.', 'error');
+
+  const avatar = name.charAt(0).toUpperCase();
+  const starsStr = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+  const today = new Date();
+  const dateStr = today.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+
+  // Create card
+  const card = document.createElement('div');
+  card.className = 'tu-review-card new-card';
+  card.innerHTML = `
+    <div class="tu-review-card-top">
+      <div class="tu-review-avatar">${avatar}</div>
+      <div class="tu-review-meta">
+        <span class="tu-review-name">${escHtml(name)}</span>
+        <span class="tu-review-city">${escHtml(city || 'Indonesia')}</span>
+      </div>
+      <span class="tu-review-badge">${escHtml(product)}</span>
+    </div>
+    <div class="tu-review-stars">${starsStr}</div>
+    <p class="tu-review-text">"${escHtml(text)}"</p>
+    <div class="tu-review-date">${dateStr}</div>
+  `;
+
+  const reviewList = document.getElementById('reviewList');
+  reviewList.insertBefore(card, reviewList.firstChild);
+
+  // Update count
+  const countEl = document.getElementById('reviewCount');
+  const total = reviewList.querySelectorAll('.tu-review-card').length;
+  if (countEl) countEl.textContent = `${total} ulasan`;
+
+  // Scroll to top of list
+  reviewList.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Reset form
+  document.getElementById('reviewProduct').selectedIndex = 0;
+  document.getElementById('reviewerName').value = '';
+  document.getElementById('reviewerCity').value = '';
+  document.getElementById('reviewText').value = '';
+  document.getElementById('reviewRating').value = '0';
+  if (charCountEl) charCountEl.textContent = '0';
+  if (ratingLabel) ratingLabel.textContent = '';
+  stars.forEach(s => s.classList.remove('active'));
+
+  showToast('Terima kasih! Ulasanmu sudah dikirim. 🎉', 'success');
+}
+
+// ---- Toast ----
+function showToast(message, type = 'success') {
+  const existing = document.querySelector('.tu-toast');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.className = `tu-toast tu-toast--${type}`;
+  toast.innerHTML = `<span>${type === 'success' ? '✓' : '!'}</span> ${message}`;
+  document.body.appendChild(toast);
+
+  requestAnimationFrame(() => toast.classList.add('show'));
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 400);
+  }, 3500);
+}
+
+// ---- Escape HTML ----
+function escHtml(str) {
+  const d = document.createElement('div');
+  d.appendChild(document.createTextNode(str));
+  return d.innerHTML;
+}
 

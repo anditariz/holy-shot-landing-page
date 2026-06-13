@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HOLY SHOT! — Sip it like you mean it</title>
-    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="icon" type="image/png" href="assets/img/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
@@ -428,7 +428,7 @@
               <li><span>G-Juice 500ml</span></li>
               <li><span>Bloody Shot! 500ml</span></li>
               <li><span>Morning Juice 500ml</span></li>
-            </ul>   
+            </ul>
             <div class="bundle-price">
               <span class="discount-badge">HEMAT 5%</span>
               <span class="old-price">Rp 205.000</span>
@@ -580,7 +580,7 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="testi-section" id="testimoni">
+    <!-- <section class="testi-section" id="testimoni">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">Testimoni</span>
@@ -608,7 +608,212 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
+<!-- TESTIMONI & ULASAN SECTION -->
+<section class="testi-ulasan-section" id="testimoni">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Testimoni & Ulasan</span>
+      <h2 class="section-title">Apa Kata Mereka</h2>
+      <p class="section-desc center">Cerita nyata dari pelanggan yang sudah merasakan manfaat Holy Shot! — atau bagikan pengalamanmu sendiri.</p>
+    </div>
+
+    <!-- TAB NAV -->
+    <div class="tu-tabs reveal">
+      <button class="tu-tab active" data-tab="testimoni" onclick="switchTab('testimoni')">
+        <span class="tu-tab-icon">💬</span> Testimoni
+      </button>
+      <button class="tu-tab" data-tab="ulasan" onclick="switchTab('ulasan')">
+        <span class="tu-tab-icon">✍️</span> Tulis Ulasan
+      </button>
+      <div class="tu-tab-indicator" id="tuTabIndicator"></div>
+    </div>
+
+    <!-- TAB: TESTIMONI -->
+    <div class="tu-content tu-content--active" id="tab-testimoni">
+      <div class="tu-testi-grid">
+        <div class="tu-testi-card reveal">
+          <div class="tu-testi-quote">"</div>
+          <div class="tu-testi-stars">★★★★★</div>
+          <p class="tu-testi-text">Awalnya coba Gingr Shot karena penasaran, ternyata rutin minum seminggu badan berasa lebih enteng dan pencernaan membaik. Sekarang sudah langganan!</p>
+          <div class="tu-testi-footer">
+            <div class="tu-testi-avatar">A</div>
+            <div>
+              <div class="tu-testi-name">Andita.</div>
+              <div class="tu-testi-role">Pelanggan setia — Jakarta</div>
+            </div>
+            <span class="tu-testi-product">Gingr Shot!</span>
+          </div>
+        </div>
+
+        <div class="tu-testi-card reveal reveal-delay-1">
+          <div class="tu-testi-quote">"</div>
+          <div class="tu-testi-stars">★★★★★</div>
+          <p class="tu-testi-text">Glow Shot bikin kulit aku beneran lebih cerah setelah rutin 2 minggu. Rasanya juga enak, nggak kayak jamu biasa. Highly recommended!</p>
+          <div class="tu-testi-footer">
+            <div class="tu-testi-avatar">A</div>
+            <div>
+              <div class="tu-testi-name">Angg**i.</div>
+              <div class="tu-testi-role">Pelanggan setia — Bandung</div>
+            </div>
+            <span class="tu-testi-product">Glow Shot!</span>
+          </div>
+        </div>
+
+        <div class="tu-testi-card reveal reveal-delay-2">
+          <div class="tu-testi-quote">"</div>
+          <div class="tu-testi-stars">★★★★★</div>
+          <p class="tu-testi-text">Morning Juice jadi ritual pagi aku sekarang. Segar banget, bikin mood bagus dari pagi. Anak-anak juga suka!</p>
+          <div class="tu-testi-footer">
+            <div class="tu-testi-avatar">D</div>
+            <div>
+              <div class="tu-testi-name">Dewi K.</div>
+              <div class="tu-testi-role">Ibu rumah tangga — Surabaya</div>
+            </div>
+            <span class="tu-testi-product">Morning Juice!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tu-cta-row reveal">
+        <p class="tu-cta-text">Punya pengalaman seru dengan Holy Shot!?</p>
+        <button class="tu-cta-btn" onclick="switchTab('ulasan')">Bagikan Ulasanmu →</button>
+      </div>
+    </div>
+
+    <!-- TAB: TULIS ULASAN -->
+    <div class="tu-content" id="tab-ulasan">
+      <div class="tu-ulasan-layout">
+        <!-- LEFT: Form -->
+        <div class="tu-form-wrap reveal">
+          <div class="tu-form-header">
+            <div class="tu-form-icon">✍️</div>
+            <div>
+              <h3 class="tu-form-title">Tulis Ulasanmu</h3>
+              <p class="tu-form-subtitle">Ceritakan pengalamanmu dan bantu yang lain!</p>
+            </div>
+          </div>
+
+          <div class="tu-form-body">
+            <div class="tu-field">
+              <label for="reviewProduct">Produk yang Dicoba</label>
+              <select id="reviewProduct">
+                <option value="" disabled selected>-- Pilih produk --</option>
+                <optgroup label="Tepache">
+                  <option value="Tepache">Tepache</option>
+                </optgroup>
+                <optgroup label="Shot! Series">
+                  <option value="Gingr Shot!">Gingr Shot!</option>
+                  <option value="Glow Shot!">Glow Shot!</option>
+                  <option value="G-Juice!">G-Juice!</option>
+                  <option value="Morning Juice!">Morning Juice!</option>
+                  <option value="Bloody Shot!">Bloody Shot!</option>
+                </optgroup>
+                <optgroup label="Pure Series">
+                  <option value="Ginger Bold">Ginger Bold</option>
+                  <option value="Glow Aura">Glow Aura</option>
+                  <option value="G-Power!">G-Power!</option>
+                  <option value="Morning Kick">Morning Kick</option>
+                  <option value="Bloody Punch!">Bloody Punch!</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="tu-field-row">
+              <div class="tu-field">
+                <label for="reviewerName">Nama</label>
+                <input type="text" id="reviewerName" placeholder="Nama kamu" />
+              </div>
+              <div class="tu-field">
+                <label for="reviewerCity">Kota</label>
+                <input type="text" id="reviewerCity" placeholder="Asal kota" />
+              </div>
+            </div>
+
+            <div class="tu-field">
+              <label>Rating</label>
+              <div class="tu-star-rating" id="starRating">
+                <span class="tu-star" data-value="1">★</span>
+                <span class="tu-star" data-value="2">★</span>
+                <span class="tu-star" data-value="3">★</span>
+                <span class="tu-star" data-value="4">★</span>
+                <span class="tu-star" data-value="5">★</span>
+                <span class="tu-rating-label" id="ratingLabel"></span>
+              </div>
+              <input type="hidden" id="reviewRating" value="0" />
+            </div>
+
+            <div class="tu-field">
+              <label for="reviewText">Ulasanmu</label>
+              <textarea id="reviewText" rows="4" placeholder="Ceritakan pengalamanmu mengonsumsi produk ini..."></textarea>
+              <div class="tu-char-count"><span id="charCount">0</span>/300</div>
+            </div>
+
+            <button type="button" class="tu-submit-btn" id="btnSubmitReview" onclick="submitReview()">
+              <span class="tu-submit-text">Kirim Ulasan</span>
+              <span class="tu-submit-arrow">→</span>
+            </button>
+            <p class="tu-form-note">Ulasan akan ditampilkan setelah diverifikasi oleh admin.</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Ulasan List -->
+        <div class="tu-list-wrap reveal reveal-delay-1">
+          <div class="tu-list-header">
+            <h3 class="tu-list-title">Ulasan Pelanggan</h3>
+            <span class="tu-list-count" id="reviewCount">3 ulasan</span>
+          </div>
+
+          <div class="tu-review-list" id="reviewList">
+            <div class="tu-review-card">
+              <div class="tu-review-card-top">
+                <div class="tu-review-avatar">A</div>
+                <div class="tu-review-meta">
+                  <span class="tu-review-name">Andita.</span>
+                  <span class="tu-review-city">Jakarta</span>
+                </div>
+                <span class="tu-review-badge">Gingr Shot!</span>
+              </div>
+              <div class="tu-review-stars">★★★★★</div>
+              <p class="tu-review-text">"Awalnya coba Gingr Shot karena penasaran, ternyata rutin minum seminggu badan berasa lebih enteng dan pencernaan membaik. Sekarang sudah langganan!"</p>
+              <div class="tu-review-date">12 Mei 2025</div>
+            </div>
+
+            <div class="tu-review-card">
+              <div class="tu-review-card-top">
+                <div class="tu-review-avatar">A</div>
+                <div class="tu-review-meta">
+                  <span class="tu-review-name">Angg**i.</span>
+                  <span class="tu-review-city">Bandung</span>
+                </div>
+                <span class="tu-review-badge">Glow Shot!</span>
+              </div>
+              <div class="tu-review-stars">★★★★★</div>
+              <p class="tu-review-text">"Glow Shot bikin kulit aku beneran lebih cerah setelah rutin 2 minggu. Rasanya juga enak, nggak kayak jamu biasa. Highly recommended!"</p>
+              <div class="tu-review-date">8 Mei 2025</div>
+            </div>
+
+            <div class="tu-review-card">
+              <div class="tu-review-card-top">
+                <div class="tu-review-avatar">D</div>
+                <div class="tu-review-meta">
+                  <span class="tu-review-name">Dewi K.</span>
+                  <span class="tu-review-city">Surabaya</span>
+                </div>
+                <span class="tu-review-badge">Morning Juice!</span>
+              </div>
+              <div class="tu-review-stars">★★★★★</div>
+              <p class="tu-review-text">"Morning Juice jadi ritual pagi aku sekarang. Segar banget, bikin mood bagus dari pagi. Anak-anak juga suka!"</p>
+              <div class="tu-review-date">3 Mei 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- ORDER FORM -->
     <section class="order-section" id="order">

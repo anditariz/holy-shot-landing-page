@@ -1182,45 +1182,45 @@ img {
   color: var(--yellow);
 }
 
-.bundle-price{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.bundle-price {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.old-price{
-    font-size: 1rem;
-    color: #999;
-    text-decoration: line-through;
-    font-weight: 500;
+.old-price {
+  font-size: 1rem;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 500;
 }
 
-.new-price{
-    font-size: 2rem;
-    color: #e0af00;
-    font-weight: 800;
+.new-price {
+  font-size: 2rem;
+  color: #e0af00;
+  font-weight: 800;
 }
 
-.discount-badge{
-    background: #ff4444;
-    color: white;
-    width: fit-content;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: .8rem;
-    font-weight: 700;
+.discount-badge {
+  background: #ff4444;
+  color: white;
+  width: fit-content;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
-.old-price{
-    color: #999;
-    text-decoration: line-through;
-    font-size: 1rem;
+.old-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 1rem;
 }
 
-.new-price{
-    color: #e0af00;
-    font-size: 2rem;
-    font-weight: 800;
+.new-price {
+  color: #e0af00;
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 /* ===== HOW TO ===== */
@@ -1374,6 +1374,775 @@ img {
 .testi-role {
   font-size: 0.78rem;
   color: var(--text-light);
+}
+
+/* ===== REVIEW / ULASAN (fallback for legacy HTML) ===== */
+.review-section {
+  padding: 80px 0;
+  background: var(--surface);
+}
+.review-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+  align-items: start;
+  width: 100%;
+}
+.review-form-area {
+  background: var(--surface);
+  border: 1px solid #f0f0f0;
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  box-shadow: var(--shadow);
+}
+.review-list-area {
+  display: flex;
+  flex-direction: column;
+}
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-height: 640px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+.review-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid #f0f0f0;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* =========================================
+   TESTIMONI & ULASAN — MERGED SECTION
+   ========================================= */
+.testi-ulasan-section {
+  padding: 100px 0 80px;
+  background: radial-gradient(ellipse at 15% 0%, rgba(45, 106, 79, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 85% 100%, rgba(45, 106, 79, 0.06) 0%, transparent 50%), var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.testi-ulasan-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(45, 106, 79, 0.3), transparent);
+}
+
+/* ---- TAB NAV ---- */
+.tu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin: 40px auto 0;
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 5px;
+  width: fit-content;
+}
+
+.tu-tab {
+  position: relative;
+  z-index: 2;
+  padding: 12px 32px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tu-tab.active {
+  color: #fff;
+}
+
+.tu-tab:hover:not(.active) {
+  color: var(--text-primary);
+}
+
+.tu-tab-icon {
+  font-size: 1rem;
+}
+
+.tu-tab-indicator {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: calc(100% - 10px);
+  width: calc(50% - 7px);
+  background: linear-gradient(135deg, #2d6a4f, #40916c);
+  border-radius: 10px;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+  box-shadow: 0 4px 16px rgba(45, 106, 79, 0.3);
+}
+
+.tu-tab-indicator.right {
+  transform: translateX(calc(100% + 4px));
+}
+
+/* ---- TAB CONTENT ---- */
+.tu-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.tu-content--active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- TESTIMONI CARDS ---- */
+.tu-testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.tu-testi-card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 32px 28px 28px;
+  position: relative;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+  overflow: hidden;
+}
+
+.tu-testi-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2d6a4f, #52b788);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.tu-testi-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(45, 106, 79, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.tu-testi-card:hover::before {
+  opacity: 1;
+}
+
+.tu-testi-quote {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(45, 106, 79, 0.2);
+  position: absolute;
+  top: 16px;
+  right: 24px;
+}
+
+.tu-testi-stars {
+  color: #e8c547;
+  font-size: 0.95rem;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.tu-testi-text {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.7;
+  margin: 0 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.tu-testi-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tu-testi-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2d6a4f, #52b788);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.tu-testi-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.tu-testi-role {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.tu-testi-product {
+  margin-left: auto;
+  background: rgba(45, 106, 79, 0.15);
+  color: #52b788;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* CTA Row */
+.tu-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tu-cta-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.tu-cta-btn {
+  padding: 10px 24px;
+  border: 1px solid rgba(45, 106, 79, 0.4);
+  background: transparent;
+  color: #52b788;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tu-cta-btn:hover {
+  background: rgba(45, 106, 79, 0.15);
+  border-color: #52b788;
+  transform: translateX(4px);
+}
+
+/* ---- ULASAN LAYOUT ---- */
+.tu-ulasan-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+/* Form Wrap */
+.tu-form-wrap {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.tu-form-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, rgba(45, 106, 79, 0.12), rgba(45, 106, 79, 0.04));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tu-form-icon {
+  font-size: 2rem;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(45, 106, 79, 0.15);
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.tu-form-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.tu-form-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 2px 0 0;
+}
+
+.tu-form-body {
+  padding: 28px 32px 32px;
+}
+
+.tu-field {
+  margin-bottom: 20px;
+}
+
+.tu-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 8px;
+}
+
+.tu-field select,
+.tu-field input[type="text"],
+.tu-field textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  box-sizing: border-box;
+}
+
+.tu-field select:focus,
+.tu-field input[type="text"]:focus,
+.tu-field textarea:focus {
+  border-color: #40916c;
+  box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.12);
+}
+
+.tu-field select option,
+.tu-field select optgroup {
+  background: #1a1a1a;
+  color: var(--text-primary);
+}
+
+.tu-field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.tu-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.tu-char-count {
+  text-align: right;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* Star Rating */
+.tu-star-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tu-star {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: rgba(226, 208, 165, 0.755);
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
+  user-select: none;
+}
+
+.tu-star:hover {
+  transform: scale(1.2);
+}
+
+.tu-star.hovered {
+  color: #e8c547aa;
+}
+
+.tu-star.active {
+  color: #e8c547;
+}
+
+.tu-rating-label {
+  margin-left: 12px;
+  font-size: 0.8rem;
+  color: #e8c547;
+  font-weight: 600;
+  min-width: 80px;
+}
+
+/* Submit Button */
+.tu-submit-btn {
+  width: 100%;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2d6a4f, #40916c);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tu-submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.tu-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(45, 106, 79, 0.4);
+}
+
+.tu-submit-btn:hover::before {
+  left: 100%;
+}
+
+.tu-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.tu-submit-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.25s ease;
+}
+
+.tu-submit-btn:hover .tu-submit-arrow {
+  transform: translateX(4px);
+}
+
+.tu-form-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 14px 0 0;
+}
+
+/* ---- Review List ---- */
+.tu-list-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.tu-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.tu-list-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.tu-list-count {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tu-review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 580px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.tu-review-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tu-review-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tu-review-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+}
+
+.tu-review-card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 22px;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.tu-review-card:hover {
+  border-color: rgba(45, 106, 79, 0.2);
+  transform: translateX(4px);
+}
+
+.tu-review-card.new-card {
+  animation: tu-slideIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes tu-slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tu-review-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.tu-review-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2d6a4f, #52b788);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.tu-review-meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.tu-review-name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.tu-review-city {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.tu-review-badge {
+  flex-shrink: 0;
+  background: rgba(45, 106, 79, 0.15);
+  color: #52b788;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.tu-review-stars {
+  color: #e8c547;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.tu-review-text {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.tu-review-date {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.2);
+  margin-top: 10px;
+}
+
+/* ---- Toast ---- */
+.tu-toast {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  padding: 16px 28px;
+  border-radius: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tu-toast.tu-toast--success {
+  background: linear-gradient(135deg, #2d6a4f, #40916c);
+  color: #fff;
+}
+
+.tu-toast.tu-toast--error {
+  background: linear-gradient(135deg, #9b2226, #ae2012);
+  color: #fff;
+}
+
+.tu-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .tu-testi-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .tu-ulasan-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testi-ulasan-section {
+    padding: 70px 0 60px;
+  }
+
+  .tu-tabs {
+    width: 100%;
+  }
+
+  .tu-tab {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 0.82rem;
+  }
+
+  .tu-tab-indicator {
+    width: calc(50% - 7px);
+  }
+
+  .tu-testi-card {
+    padding: 24px 20px 22px;
+  }
+
+  .tu-testi-quote {
+    font-size: 3rem;
+  }
+
+  .tu-testi-footer {
+    flex-wrap: wrap;
+  }
+
+  .tu-testi-product {
+    margin-left: 54px;
+    margin-top: -4px;
+  }
+
+  .tu-cta-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tu-form-header {
+    padding: 20px 24px;
+  }
+
+  .tu-form-body {
+    padding: 24px;
+  }
+
+  .tu-field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tu-review-list {
+    max-height: 400px;
+  }
 }
 
 /* ===== ORDER FORM ===== */
