@@ -1522,6 +1522,7 @@ img {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 40px;
+  align-items: stretch; /* Memaksa baris grid punya tinggi setara */
 }
 
 .tu-testi-card {
@@ -1535,6 +1536,14 @@ img {
     border-color 0.35s ease,
     box-shadow 0.35s ease;
   overflow: hidden;
+  
+  /* FIXED: Ditambahkan agar susunan komponen di dalam kartu presisi */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 380px; 
+  box-sizing: border-box;
 }
 
 .tu-testi-card::before {
@@ -1584,6 +1593,26 @@ img {
   margin: 0 0 20px;
   position: relative;
   z-index: 1;
+
+  /* FIXED: Membatasi panjang teks novel agar tidak bikin kartu melar ke bawah */
+  flex-grow: 1;
+  max-height: 160px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Custom scrollbar halus untuk teks ulasan yang kepanjangan */
+.tu-testi-text::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tu-testi-text::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tu-testi-text::-webkit-scrollbar-thumb {
+  background: rgba(45, 106, 79, 0.2);
+  border-radius: 10px;
 }
 
 .tu-testi-footer {
@@ -1592,6 +1621,7 @@ img {
   gap: 12px;
   padding-top: 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: auto; /* FIXED: Memaksa footer selalu sejajar di paling bawah kartu */
 }
 
 .tu-testi-avatar {
@@ -1760,10 +1790,12 @@ img {
   box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.12);
 }
 
+/* FIXED: Mengubah warna menu option dropdown produk agar bersih (tidak hitam pekat) */
 .tu-field select option,
 .tu-field select optgroup {
-  background: #1a1a1a;
-  color: var(--text-primary);
+  background: #ffffff;
+  color: #2d6a4f;
+  font-weight: 500;
 }
 
 .tu-field textarea {
@@ -2108,6 +2140,8 @@ img {
 
   .tu-testi-card {
     padding: 24px 20px 22px;
+    height: auto; /* Biar responsive di mobile tetep proporsional */
+    min-height: unset;
   }
 
   .tu-testi-quote {
@@ -2144,7 +2178,6 @@ img {
     max-height: 400px;
   }
 }
-
 /* ===== ORDER FORM ===== */
 .order-section {
   padding: 80px 0 100px;

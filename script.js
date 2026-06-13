@@ -304,64 +304,138 @@ if (reviewTextEl && charCountEl) {
 }
 
 // ---- Submit Review ----
-function submitReview() {
+// ---- Submit Review & Fetch Data (GAS) ----
+
+// PENTING: Ganti tulisan di bawah pakai URL Web App lu yang baru
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwyo_ULpaCHtN_yK8rx7iURYjMTT2XuAM5OPrvXdyOb3xYyNzob_Gxy_1KPhY8XfPz/exec';
+
+
+// Fungsi buat narik data dari Spreadsheet
+async function loadReviews() {
+  const reviewList = document.getElementById('reviewList'); // List di sebelah form
+  const testiGrid = document.getElementById('testiGrid');   // Grid di halaman depan
+  
+  try {
+    const response = await fetch(SCRIPT_URL);
+    const data = await response.json();
+    
+    // Kosongkan kedua tempat sebelum diisi data live
+    if (reviewList) reviewList.innerHTML = '';
+    if (testiGrid) testiGrid.innerHTML = '';
+    
+    data.forEach(ulasan => {
+      const avatar = ulasan.name.charAt(0).toUpperCase();
+      const starsStr = '★'.repeat(ulasan.rating) + '☆'.repeat(5 - ulasan.rating);
+      
+      // 1. TAMPILAN UNTUK HALAMAN DEPAN (TAB TESTIMONI)
+      if (testiGrid) {
+        const testiCard = document.createElement('div');
+        testiCard.className = 'tu-testi-card';
+        testiCard.innerHTML = `
+          <div class="tu-testi-quote">"</div>
+          <div class="tu-testi-stars">${starsStr}</div>
+          <p class="tu-testi-text">${escHtml(ulasan.text)}</p>
+          <div class="tu-testi-footer">
+            <div class="tu-testi-avatar">${avatar}</div>
+            <div>
+              <div class="tu-testi-name">${escHtml(ulasan.name)}</div>
+              <div class="tu-testi-role">Pelanggan — ${escHtml(ulasan.city || 'Indonesia')}</div>
+            </div>
+            <span class="tu-testi-product">${escHtml(ulasan.product)}</span>
+          </div>
+        `;
+        testiGrid.appendChild(testiCard);
+      }
+      
+      // 2. TAMPILAN UNTUK LIST DI SEBELAH FORM
+      if (reviewList) {
+        const reviewCard = document.createElement('div');
+        reviewCard.className = 'tu-review-card';
+        reviewCard.innerHTML = `
+          <div class="tu-review-card-top">
+            <div class="tu-review-avatar">${avatar}</div>
+            <div class="tu-review-meta">
+              <span class="tu-review-name">${escHtml(ulasan.name)}</span>
+              <span class="tu-review-city">${escHtml(ulasan.city || 'Indonesia')}</span>
+            </div>
+            <span class="tu-review-badge">${escHtml(ulasan.product)}</span>
+          </div>
+          <div class="tu-review-stars">${starsStr}</div>
+          <p class="tu-review-text">"${escHtml(ulasan.text)}"</p>
+          <div class="tu-review-date">${ulasan.tanggal}</div>
+        `;
+        reviewList.appendChild(reviewCard);
+      }
+    });
+
+    const countEl = document.getElementById('reviewCount');
+    if (countEl) countEl.textContent = `${data.length} ulasan`;
+
+  } catch (error) {
+    console.error('Gagal memuat ulasan:', error);
+  }
+}
+
+// Panggil ulasan pas web pertama kali dibuka
+document.addEventListener('DOMContentLoaded', () => {
+  const defaultContent = document.getElementById('tab-testimoni');
+  if (defaultContent) {
+    defaultContent.style.display = 'block';
+  }
+  loadReviews(); // <-- Tambahan buat manggil data otomatis
+});
+
+// Fungsi submit ulasan baru
+async function submitReview() {
   const product = document.getElementById('reviewProduct').value;
   const name = document.getElementById('reviewerName').value.trim();
   const city = document.getElementById('reviewerCity').value.trim();
   const rating = parseInt(document.getElementById('reviewRating').value);
   const text = document.getElementById('reviewText').value.trim();
 
-  // Validation
+  // Validasi
   if (!product) return showToast('Pilih produk yang ingin diulas.', 'error');
   if (!name) return showToast('Masukkan nama kamu.', 'error');
   if (rating === 0) return showToast('Beri rating bintang terlebih dahulu.', 'error');
   if (!text) return showToast('Tulis ulasanmu terlebih dahulu.', 'error');
-  if (text.length < 10) return showToast('Ulasan terlalu pendek, tulis minimal 10 karakter.', 'error');
+  if (text.length < 10) return showToast('Ulasan terlalu pendek, minimal 10 karakter.', 'error');
 
-  const avatar = name.charAt(0).toUpperCase();
-  const starsStr = '★'.repeat(rating) + '☆'.repeat(5 - rating);
-  const today = new Date();
-  const dateStr = today.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+  const dataKirim = {
+    product: product,
+    name: name,
+    city: city,
+    rating: rating,
+    text: text
+  };
 
-  // Create card
-  const card = document.createElement('div');
-  card.className = 'tu-review-card new-card';
-  card.innerHTML = `
-    <div class="tu-review-card-top">
-      <div class="tu-review-avatar">${avatar}</div>
-      <div class="tu-review-meta">
-        <span class="tu-review-name">${escHtml(name)}</span>
-        <span class="tu-review-city">${escHtml(city || 'Indonesia')}</span>
-      </div>
-      <span class="tu-review-badge">${escHtml(product)}</span>
-    </div>
-    <div class="tu-review-stars">${starsStr}</div>
-    <p class="tu-review-text">"${escHtml(text)}"</p>
-    <div class="tu-review-date">${dateStr}</div>
-  `;
+  showToast('Sedang mengirim ulasan...', 'success');
 
-  const reviewList = document.getElementById('reviewList');
-  reviewList.insertBefore(card, reviewList.firstChild);
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(dataKirim)
+    });
 
-  // Update count
-  const countEl = document.getElementById('reviewCount');
-  const total = reviewList.querySelectorAll('.tu-review-card').length;
-  if (countEl) countEl.textContent = `${total} ulasan`;
+    // Reset form
+    document.getElementById('reviewProduct').selectedIndex = 0;
+    document.getElementById('reviewerName').value = '';
+    document.getElementById('reviewerCity').value = '';
+    document.getElementById('reviewText').value = '';
+    document.getElementById('reviewRating').value = '0';
+    if (charCountEl) charCountEl.textContent = '0';
+    if (ratingLabel) ratingLabel.textContent = '';
+    stars.forEach(s => s.classList.remove('active'));
 
-  // Scroll to top of list
-  reviewList.scrollTo({ top: 0, behavior: 'smooth' });
+    showToast('Terima kasih! Ulasanmu berhasil dikirim. 🎉', 'success');
+    
+    // Refresh list ulasan biar yang baru langsung muncul
+    loadReviews();
 
-  // Reset form
-  document.getElementById('reviewProduct').selectedIndex = 0;
-  document.getElementById('reviewerName').value = '';
-  document.getElementById('reviewerCity').value = '';
-  document.getElementById('reviewText').value = '';
-  document.getElementById('reviewRating').value = '0';
-  if (charCountEl) charCountEl.textContent = '0';
-  if (ratingLabel) ratingLabel.textContent = '';
-  stars.forEach(s => s.classList.remove('active'));
-
-  showToast('Terima kasih! Ulasanmu sudah dikirim. 🎉', 'success');
+  } catch (error) {
+    showToast('Gagal mengirim ulasan, coba lagi ya.', 'error');
+    console.error(error);
+  }
 }
 
 // ---- Toast ----
