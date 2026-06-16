@@ -196,6 +196,9 @@ function checkoutWhatsApp() {
   if (address) {
     message += `*Alamat:* ${address}\n`;
   }
+  if (phone) {
+    message += `*Nomor Handphone:* ${phone}\n`;
+  }
   if (note) {
     message += `*Catatan:* ${note}\n`;
   }
