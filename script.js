@@ -168,7 +168,7 @@ function checkoutWhatsApp() {
   message += `Mohon info ketersediaan, estimasi pembuatan, dan ongkirnya. Terima kasih!`;
 
   const encoded = encodeURIComponent(message);
-  window.open(`https://wa.me/6282228051397?text=${encoded}`, '_blank');
+  window.open(`https://wa.me/682228051397?text=${encoded}`, '_blank');
 }
 
 // ===== NAVBAR SCROLL =====
@@ -307,7 +307,7 @@ if (reviewTextEl && charCountEl) {
 // ---- Submit Review & Fetch Data (GAS) ----
 
 // PENTING: Ganti tulisan di bawah pakai URL Web App lu yang baru
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwyo_ULpaCHtN_yK8rx7iURYjMTT2XuAM5OPrvXdyOb3xYyNzob_Gxy_1KPhY8XfPz/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby4ewk542ToZpaJl24zgt1l83qp_RaOuzb9LnxHg4QYdZUZyQwCKUX0x8GR3QHw2cmP/exec';
 
 
 // Fungsi buat narik data dari Spreadsheet
@@ -462,4 +462,24 @@ function escHtml(str) {
   d.appendChild(document.createTextNode(str));
   return d.innerHTML;
 }
+
+/* =============================================
+   FAQ ACCORDION
+   ============================================= */
+
+function toggleFaq(button) {
+  const item = button.parentElement;
+  const isActive = item.classList.contains('active');
+
+  // Tutup semua FAQ lain
+  document.querySelectorAll('.faq-item.active').forEach(function (el) {
+    el.classList.remove('active');
+  });
+
+  // Buka yang diklik (jika sebelumnya tertutup)
+  if (!isActive) {
+    item.classList.add('active');
+  }
+}
+
 

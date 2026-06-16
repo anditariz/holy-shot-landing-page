@@ -3,13 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HOLY SHOT! — Sip it like you mean it</title>
+
+    <!-- PRIMARY META -->
+    <title>HOLY SHOT! — Sip it like you mean it | Jus Segar Alami Tanpa Gula Tambahan</title>
+    <meta name="description" content="Holy Shot! adalah minuman segar alami dari 100% bahan pilihan — tanpa pengawet, tanpa gula tambahan. Sistem pre-order, dibuat fresh setelah pesan. Tersedia Shot! Series, Pure Series, dan Tepache." />
+    <meta name="keywords" content="jus sehat, jus segar, cold press juice, jamu modern, detox juice, pre-order jus, Holy Shot, tepache, probiotik, minuman sehat Indonesia" />
+    <meta name="author" content="Holy Shot!" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://yourholyshot.vercel.app/" />
+
+    <!-- OPEN GRAPH (Facebook, WhatsApp, Instagram, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourholyshot.vercel.app/" />
+    <meta property="og:title" content="HOLY SHOT! — Sip it like you mean it" />
+    <meta property="og:description" content="Minuman segar alami dari 100% bahan pilihan. Tanpa gula tambahan, tanpa pengawet. Pre-order & dibuat fresh setelah pesan. 🍊🥕🥬" />
+    <meta property="og:image" content="https://yourholyshot.vercel.app/assets/img/og-cover.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Holy Shot! — Minuman Segar Alami" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Holy Shot!" />
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://yourholyshot.vercel.app/" />
+    <meta name="twitter:title" content="HOLY SHOT! — Sip it like you mean it" />
+    <meta name="twitter:description" content="Minuman segar alami dari 100% bahan pilihan. Tanpa gula tambahan, tanpa pengawet. Pre-order & dibuat fresh." />
+    <meta name="twitter:image" content="https://yourholyshot.vercel.app/assets/img/og-cover.jpg" />
+
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="assets/img/logo.png" />
+    <link rel="apple-touch-icon" href="assets/img/logo.png" />
+
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- STYLESHEET -->
     <link rel="stylesheet" href="style.css" />
-  </head>
+    <!-- GOOGLE ANALYTICS 4 -->
+    <!-- Ganti G-XXXXXXXXXX dengan Measurement ID Anda dari https://analytics.google.com -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKER73GJY4"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NKER73GJY4', {
+          page_title: document.title,
+          page_location: window.location.href
+        }); 
+      </script>
+    </head>
   <body>
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
@@ -743,6 +788,101 @@
       </div>
     </section>
 
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header reveal">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Pertanyaan yang Sering Ditanyakan</h2>
+      <p class="section-desc center">Masih bingung? Cek jawaban dari pertanyaan yang paling sering ditanyakan pelanggan kami.</p>
+      </div>
+
+      <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Apa itu sistem Pre-Order?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Holy Shot! menggunakan sistem Pre-Order, artinya produk baru dibuat <strong>setelah pesanan dikonfirmasi</strong>. Tidak ada stok lama, tidak ada pengawet. Begitu kamu pesan, kami baru mulai meracik. Estimasi pembuatan 1–2 hari kerja.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Berapa lama produk bisa bertahan?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Karena tanpa pengawet, daya tahan produk bervariasi:</p>
+          <ul>
+            <li><strong>Gingr Shot! &amp; Glow Shot!</strong> — tahan <strong>10–12 hari</strong> di kulkas (lebih lama di freezer)</li>
+            <li><strong>G-Juice!, Morning Juice!, Bloody Shot!, Pure Series &amp; Tepache</strong> — tahan <strong>3–5 hari</strong> di kulkas</li>
+          </ul>
+          <p>Kami sarankan segera dikonsumsi untuk kesegaran dan nutrisi optimal.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Apakah bisa dikirim ke luar kota?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Saat ini kami melayani pengiriman lokal dan sekitarnya via kurir same-day. Untuk pengiriman ke luar kota, silakan konsultasikan via WhatsApp admin agar kami bisa cek ketersediaan dan opsi pengiriman yang aman untuk produk segar.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Metode pembayaran apa saja yang diterima?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Setelah checkout via WhatsApp, admin akan mengirimkan detail pembayaran. Kami menerima:</p>
+          <ul>
+            <li>Transfer bank (BCA, Mandiri, BRI)</li>
+            <li>E-wallet (GoPay, OVO, DANA, ShopeePay)</li>
+            <li>QRIS</li>
+          </ul>
+          <p>Pembayaran dilakukan sebelum produk dibuat.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Apakah produk ini aman untuk ibu hamil atau anak-anak?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Produk kami dibuat dari 100% bahan alami tanpa pengawet dan pemanis buatan. Namun, karena kondisi setiap orang berbeda, <strong>kami sarankan untuk berkonsultasi dengan dokter terlebih dahulu</strong> sebelum mengonsumsi, terutama untuk ibu hamil, menyusui, atau anak-anak di bawah usia tertentu.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Berapa ongkos kirimnya?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Ongkir dihitung berdasarkan jarak pengiriman dan akan diinformasikan oleh admin via WhatsApp setelah kamu melakukan pemesanan. Kamu juga bisa memilih <strong>ambil langsung</strong> jika lokasinya memungkinkan (bebas ongkir).</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Bisakah request kombinasi rasa custom?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Untuk saat ini kami menyediakan varian rasa yang sudah teruji dan terstandar. Namun, jika kamu punya alergi tertentu atau ingin request khusus, silakan sampaikan via WhatsApp — kami akan berusaha mengakomodasi jika memungkinkan.</p>
+        </div>
+      </div>
+
+      </div>
+      </div>
+    </section>
 
     <!-- ORDER FORM -->
     <section class="order-section" id="order">
@@ -862,7 +1002,7 @@
       <div class="container">
         <div class="footer-grid">
           <div>
-            <!-- Ganti dengan: <img src="images/logo.png" alt="Holy Shot!" style="height:36px; margin-bottom:12px;"> -->
+            <img src="assets/img/logo.png" alt="Holy Shot!" style="height:36px; margin-bottom:12px;">
             <div class="footer-brand">HOLY <span>SHOT!</span></div>
             <p class="footer-desc">Minuman sehat alami tanpa gula tambahan. Dibuat segar dengan 100% bahan pilihan untuk tubuh yang lebih sehat setiap hari.</p>
           </div>
@@ -878,7 +1018,7 @@
             <a href="https://wa.me/6282228051397" target="_blank">WhatsApp Admin: +6282228051397</a>
           </div>
         </div>
-        <div class="footer-bottom">&copy; 2025 Holy Shot! — All rights reserved.</div>
+        <div class="footer-bottom">&copy; 2026 Holy Shot! — All rights reserved.</div>
       </div>
     </footer>
 
