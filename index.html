@@ -44,23 +44,27 @@
     <link rel="stylesheet" href="style.css" />
     <!-- GOOGLE ANALYTICS 4 -->
     <!-- Ganti G-XXXXXXXXXX dengan Measurement ID Anda dari https://analytics.google.com -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKER73GJY4"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-NKER73GJY4', {
-          page_title: document.title,
-          page_location: window.location.href
-        }); 
-      </script>
-    </head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKER73GJY4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-NKER73GJY4", {
+        page_title: document.title,
+        page_location: window.location.href,
+      });
+    </script>
+  </head>
   <body>
+    <a class="skip-link" href="#main-content">Lewati ke konten</a>
+
     <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Navigasi utama">
       <div class="nav-inner">
-        <a href="/"><img src="assets/img/logo.png" alt="Holy Shot!" class="nav-logo" /></a>
-        <a href="#" class="nav-brand">HOLY <span>SHOT!</span></a>
+        <a href="#hero" aria-label="Holy Shot! — beranda"><img src="assets/img/logo.png" alt="" class="nav-logo" width="48" height="48" /></a>
+        <a href="#hero" class="nav-brand">HOLY <span>SHOT!</span></a>
         <ul class="nav-links">
           <li><a href="#about">Tentang</a></li>
           <li><a href="#products">Produk</a></li>
@@ -68,31 +72,37 @@
           <li><a href="#testimoni">Testimoni</a></li>
           <li><a href="#order" class="btn-nav">Pesan Sekarang</a></li>
         </ul>
-        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Buka menu" aria-controls="mobileMenu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
 
     <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#about" onclick="closeMenu()">Tentang</a>
-      <a href="#products" onclick="closeMenu()">Produk</a>
-      <a href="#bundling" onclick="closeMenu()">Bundling</a>
-      <a href="#testimoni" onclick="closeMenu()">Testimoni</a>
-      <a href="#order" onclick="closeMenu()">Pesan Sekarang</a>
-    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Navigasi seluler" inert>
+      <a href="#about">Tentang</a>
+      <a href="#products">Produk</a>
+      <a href="#bundling">Bundling</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="#order">Pesan Sekarang</a>
+    </nav>
 
+    <main id="main-content">
     <!-- HERO -->
     <section class="hero" id="hero">
+      <div class="hero-visual">
+        <img src="assets/img/optimized/shot-series.jpeg" alt="Botol-botol jus Holy Shot! bersama buah segar" width="1200" height="1600" fetchpriority="high" decoding="async" />
+      </div>
       <div class="hero-logo-wrap">
-        <img src="assets/img/logo.png" alt="Holy Shot!" class="hero-logo" />
+        <img src="assets/img/logo.png" alt="" class="hero-logo" width="120" height="120" fetchpriority="high" />
       </div>
 
-      <div class="logo-text-brand">
+      <h1 class="logo-text-brand">
         <span class="logo-holy">HOLY</span>
         <span class="logo-shot">SHOT!</span>
         <span class="logo-dip">Sip it like you mean it!</span>
-      </div>
-      <p class="hero-sub" style="margin-top: 16px">Jamu Segar Alami &bull; Tanpa Gula Tambahan &bull; 100% Bahan Pilihan</p>
+      </h1>
+      <p class="hero-sub">Jamu Segar Alami &bull; Tanpa Gula Tambahan &bull; 100% Bahan Pilihan</p>
       <div class="preorder-badge">Sistem Pre-Order &bull; Dibuat Fresh Setelah Pesan</div>
       <a href="#products" class="btn-hero">Jelajahi Produk</a>
       <div class="scroll-hint">Scroll untuk menjelajahi</div>
@@ -152,7 +162,8 @@
             </div>
           </div>
           <div class="about-image-placeholder reveal reveal-delay-2">
-            <img src="assets/img/product.jpeg" alt="About Holy Shot!" class="about-image" />
+            <img src="assets/img/product.jpeg" alt="Pilihan bahan segar Holy Shot!" class="about-image" width="2457" height="3276" loading="lazy" decoding="async" />
+            <div class="about-photo-badge" aria-hidden="true"><span>100%</span><small>Bahan alami</small></div>
             <!-- <span class="about-emoji">🍊</span>
           <span>FOTO BRAND / PRODUK</span>
           <span class="about-ph-sub">Ganti dengan foto brand</span> -->
@@ -161,12 +172,57 @@
       </div>
     </section>
 
-    <!-- TEPACHE -->
-    <section class="tepache-section" id="tepache">
+    <!-- SIGNATURE PRODUCT -->
+    <section class="signature-section" id="signature">
       <div class="container">
-        <div class="tepache-badge reveal">
-          <span class="tepache-new-tag">NEW</span>
-          <span class="tepache-obsession-text">MEET OUR NEWEST OBSESSION</span>
+        <div class="signature-card">
+          <div class="signature-visual reveal">
+            <div class="signature-image-wrap">
+              <img src="assets/img/gingr-shot.jpeg" alt="Botol Gingr Shot! dengan jahe, kunyit, jeruk, dan lemon" class="signature-image" width="2624" height="3499" loading="lazy" decoding="async" />
+              <span class="signature-photo-badge" aria-hidden="true">Jahe &bull; Kunyit &bull; Lemon</span>
+            </div>
+          </div>
+          <div class="signature-content reveal reveal-delay-1">
+            <span class="signature-label">Produk Andalan</span>
+            <h2 class="signature-title">Gingr Shot!</h2>
+            <p class="signature-tagline">Racikan jahe klasik untuk memulai harimu.</p>
+            <p class="signature-description">
+              Shot jahe klasik yang jadi andalan. Perpaduan jahe dan kunyit dengan sentuhan jeruk dan lemon memberikan energi alami untuk memulai harimu.
+            </p>
+            <p class="signature-ingredients">Jahe, kunyit, jeruk, lemon &bull; Tanpa gula tambahan</p>
+
+            <ul class="signature-benefits" aria-label="Manfaat Gingr Shot!">
+              <li><span class="signature-benefit-icon" aria-hidden="true">↗</span><span>Melancarkan siklus menstruasi dan meredakan nyeri haid</span></li>
+              <li><span class="signature-benefit-icon" aria-hidden="true">✦</span><span>Meningkatkan daya tahan tubuh dan metabolisme</span></li>
+              <li><span class="signature-benefit-icon" aria-hidden="true">♡</span><span>Mendukung kesuburan dengan antioksidan pelindung sel</span></li>
+              <li><span class="signature-benefit-icon" aria-hidden="true">✧</span><span>Anti-aging alami dan membantu detoks tubuh</span></li>
+            </ul>
+
+            <div class="signature-highlights">
+              <span>Tahan 10-12 hari di kulkas</span>
+              <span>Tanpa gula tambahan</span>
+              <span>Dibuat fresh setelah pesan (pre-order)</span>
+            </div>
+
+            <div class="signature-prices" aria-label="Harga Gingr Shot!">
+              <div><span>500ml</span><strong>Rp 38.000</strong></div>
+              <div><span>1000ml</span><strong>Rp 75.000</strong></div>
+            </div>
+
+            <div class="signature-actions">
+              <a href="#order" class="signature-order-btn" data-preselect-product="Gingr Shot">Pesan Gingr Shot!</a>
+              <a href="#bundling" class="signature-bundle-link">Lihat paket Ginger Addict &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEPACHE -->
+    <section class="tepache-section is-regular" id="tepache">
+      <div class="container">
+        <div class="tepache-badge reveal" hidden>
+          <span class="tepache-new-tag"></span>
         </div>
 
         <div class="tepache-hero reveal">
@@ -179,7 +235,8 @@
         <div class="tepache-grid">
           <div class="tepache-visual reveal">
             <div class="tepache-bottle-wrap">
-              <img src="assets/img/tepache.png" alt="Tepache — Fermented Pineapple Drink" class="tepache-bottle-img" />
+              <img src="assets/img/tepache.png" alt="Botol minuman fermentasi nanas Tepache" class="tepache-bottle-img" width="427" height="562" loading="lazy" decoding="async" />
+              <span class="tepache-photo-badge" aria-hidden="true">Fermentasi alami</span>
               <div class="tepache-sparkle tepache-sparkle-1"></div>
               <div class="tepache-sparkle tepache-sparkle-2"></div>
               <div class="tepache-sparkle tepache-sparkle-3"></div>
@@ -191,21 +248,36 @@
           <div class="tepache-details">
             <div class="tepache-benefits reveal">
               <div class="tepache-benefit-item">
-                <span class="tepache-benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#992B15"><path d="M120-80v-240q0-50 35-85t85-35h80q50 0 85-35t35-85q0-17-11.5-28.5T400-600q-33 0-56.5-23.5T320-680v-200h80v200q50 0 85 35t35 85q0 83-58.5 141.5T320-360h-80q-17 0-28.5 11.5T200-320v240h-80Zm240 0h-80v-80q0-50 35-85t85-35h160q83 0 141.5-58.5T760-480v-40q0-83-58.5-141.5T560-720q-33 0-56.5-23.5T480-800v-80h80v80q117 0 198.5 81.5T840-520v40q0 117-81.5 198.5T560-200H400q-17 0-28.5 11.5T360-160v80Zm-160 0v-240q0-17 11.5-28.5T240-360h80q83 0 141.5-58.5T520-560q0-50-35-85t-85-35v-200 200q50 0 85 35t35 85q0 83-58.5 141.5T320-360h-80q-17 0-28.5 11.5T200-320v240Z"/></svg></span>
+                <span class="tepache-benefit-icon"
+                  ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#992B15">
+                    <path
+                      d="M120-80v-240q0-50 35-85t85-35h80q50 0 85-35t35-85q0-17-11.5-28.5T400-600q-33 0-56.5-23.5T320-680v-200h80v200q50 0 85 35t35 85q0 83-58.5 141.5T320-360h-80q-17 0-28.5 11.5T200-320v240h-80Zm240 0h-80v-80q0-50 35-85t85-35h160q83 0 141.5-58.5T760-480v-40q0-83-58.5-141.5T560-720q-33 0-56.5-23.5T480-800v-80h80v80q117 0 198.5 81.5T840-520v40q0 117-81.5 198.5T560-200H400q-17 0-28.5 11.5T360-160v80Zm-160 0v-240q0-17 11.5-28.5T240-360h80q83 0 141.5-58.5T520-560q0-50-35-85t-85-35v-200 200q50 0 85 35t35 85q0 83-58.5 141.5T320-360h-80q-17 0-28.5 11.5T200-320v240Z"
+                    /></svg
+                ></span>
                 <div>
                   <strong>Bantu Pencernaan</strong>
                   <p>Probiotik alami dari fermentasi membantu menjaga keseimbangan flora usus.</p>
                 </div>
               </div>
               <div class="tepache-benefit-item">
-                <span class="tepache-benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#992B15"><path d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"/></svg></span>
+                <span class="tepache-benefit-icon"
+                  ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#992B15">
+                    <path
+                      d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"
+                    /></svg
+                ></span>
                 <div>
                   <strong>Perut Lebih Nyaman</strong>
                   <p>Rasa asam segar yang menenangkan perut dan mengurangi kembung.</p>
                 </div>
               </div>
               <div class="tepache-benefit-item">
-                <span class="tepache-benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#992B15"><path d="M620-520q25 0 42.5-17.5T680-580q0-25-17.5-42.5T620-640q-25 0-42.5 17.5T560-580q0 25 17.5 42.5T620-520Zm-280 0q25 0 42.5-17.5T400-580q0-25-17.5-42.5T340-640q-25 0-42.5 17.5T280-580q0 25 17.5 42.5T340-520Zm263.5 221.5Q659-337 684-400H276q25 63 80.5 101.5T480-260q68 0 123.5-38.5ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q10 0 19.5.5T519-878q-6 20-8.5 39.5T509-799q-8-1-14.5-1H480q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-21-3-41.5t-8-40.5q20-3 39.5-9t37.5-15q7 26 10.5 52t3.5 54q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm276-160L616-780q-13-13-18.5-28t-5.5-30q0-32 23-57t59-25q28 0 44 13t38 35q20-20 36.5-34t45.5-14q37 0 59.5 25.5T920-837q0 15-6 30t-18 27L756-640Z"/></svg></span>
+                <span class="tepache-benefit-icon"
+                  ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#992B15">
+                    <path
+                      d="M620-520q25 0 42.5-17.5T680-580q0-25-17.5-42.5T620-640q-25 0-42.5 17.5T560-580q0 25 17.5 42.5T620-520Zm-280 0q25 0 42.5-17.5T400-580q0-25-17.5-42.5T340-640q-25 0-42.5 17.5T280-580q0 25 17.5 42.5T340-520Zm263.5 221.5Q659-337 684-400H276q25 63 80.5 101.5T480-260q68 0 123.5-38.5ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q10 0 19.5.5T519-878q-6 20-8.5 39.5T509-799q-8-1-14.5-1H480q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-21-3-41.5t-8-40.5q20-3 39.5-9t37.5-15q7 26 10.5 52t3.5 54q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm276-160L616-780q-13-13-18.5-28t-5.5-30q0-32 23-57t59-25q28 0 44 13t38 35q20-20 36.5-34t45.5-14q37 0 59.5 25.5T920-837q0 15-6 30t-18 27L756-640Z"
+                    /></svg
+                ></span>
                 <div>
                   <strong>Kesehatan Usus & Kulit</strong>
                   <p>Probiotik dan vitamin C dari nanas fermentasi mendukung usus sehat dan kulit bercahaya.</p>
@@ -223,10 +295,9 @@
                 <div class="price-chip tepache-price"><span class="size">250ml</span> Rp 15.000</div>
                 <div class="price-chip tepache-price"><span class="size">500ml</span> Rp 27.000</div>
               </div>
-              <a href="#order" class="btn-tepache-order">Pesan Tepache Sekarang</a>
+              <a href="#order" class="btn-tepache-order" data-preselect-product="Tepache">Pesan Sekarang</a>
             </div>
 
-            <div class="tepache-welcome reveal">Welcome to the <strong>Tepache era.</strong></div>
           </div>
         </div>
       </div>
@@ -241,37 +312,13 @@
           <p class="section-desc center">Dibuat fresh tanpa gula tambahan. Setiap botol adalah kombinasi sempurna dari buah, sayur, dan rempah pilihan.</p>
         </div>
 
-        <!-- Gingr Shot! -->
-        <div class="product-row reveal gjuice-bg">
-          <div class="product-image-wrap">
-            <div class="product-image-placeholder ph-orange">
-              <img src="assets/img/gingr-shot.jpeg" alt="Gingr Shot!" class="product-image" />
-            </div>
-          </div>
-          <div class="product-info">
-            <span class="product-tag tag-orange">Shot! Series</span>
-            <h3 class="product-name">Gingr Shot!</h3>
-            <span class="preorder-label">Pre-Order — Dibuat Fresh</span>
-            <p class="product-ingredients">Jahe, Kunyit, Jeruk, Lemon &bull; Tanpa gula tambahan, hanya air</p>
-            <p class="product-desc">Shot jahe klasik yang jadi andalan. Perpaduan jahe dan kunyit dengan sentuhan jeruk dan lemon memberikan energi alami untuk memulai harimu.</p>
-            <ul class="product-benefits">
-              <li>Melancarkan siklus menstruasi dan meredakan nyeri haid</li>
-              <li>Meningkatkan daya tahan tubuh dan metabolisme</li>
-              <li>Mendukung kesuburan dengan antioksidan pelindung sel</li>
-              <li>Anti-aging alami dan membantu detoks tubuh</li>
-            </ul>
-            <div class="product-price-row">
-              <div class="price-chip"><span class="size">500ml</span><span class="price"> Rp 38.000</span></div>
-              <div class="price-chip"><span class="size">1000ml</span><span class="price"> Rp 75.000</span></div>
-            </div>
-          </div>
-        </div>
-
+        <div class="product-carousel" data-carousel data-carousel-layout="stacked" role="region" aria-roledescription="carousel" aria-label="Produk Shot Series">
+          <div class="product-carousel-track" data-carousel-track tabindex="0">
         <!-- Glow Shot! -->
         <div class="product-row reverse reveal">
           <div class="product-image-wrap">
             <div class="product-image-placeholder ph-gold">
-              <img src="assets/img/glow-shot.jpeg" alt="Glow Shot!" class="product-image" />
+              <img src="assets/img/optimized/glow-shot.jpeg" alt="Glow Shot!" class="product-image" loading="lazy" />
               <!-- <div class="ph-label">GLOW<br>SHOT!</div>
             <div class="ph-sub">500ml / 1000ml</div>
             <div class="ph-note">Ganti dengan foto produk</div> -->
@@ -283,16 +330,20 @@
             <span class="preorder-label">Pre-Order — Dibuat Fresh</span>
             <p class="product-ingredients">Wortel, Jeruk, Lemon, Jahe (sedikit) &bull; Tanpa gula tambahan, hanya air</p>
             <p class="product-desc">Rahasia kulit glowing dari dalam. Kombinasi wortel kaya beta-karoten dengan jeruk dan lemon untuk kulit yang lebih cerah dan sehat.</p>
-            <ul class="product-benefits">
+            <details class="product-benefits-details">
+              <summary>Kenali manfaat</summary>
+              <ul class="product-benefits">
               <li>Mencerahkan kulit dengan beta-karoten dan vitamin A</li>
               <li>Melembapkan dan membuat kulit lebih halus</li>
               <li>Mengurangi minyak berlebih dan meredakan kemerahan</li>
-              <li>Melawan tanda penuaan dengan antioksidan tinggi</li>
-            </ul>
+                <li>Melawan tanda penuaan dengan antioksidan tinggi</li>
+              </ul>
+            </details>
             <div class="product-price-row">
               <div class="price-chip"><span class="size">500ml</span> Rp 38.000</div>
               <div class="price-chip"><span class="size">1000ml</span> Rp 75.000</div>
             </div>
+            <a href="#order" class="product-order-link" data-preselect-product="Glow Shot">Pesan Glow Shot <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 
@@ -300,7 +351,7 @@
         <div class="product-row reveal gjuice-bg">
           <div class="product-image-wrap">
             <div class="product-image-placeholder ph-green">
-              <img src="assets/img/GJuice.jpeg" alt="G-Juice!" class="product-image" />
+              <img src="assets/img/optimized/GJuice.jpeg" alt="G-Juice!" class="product-image" loading="lazy" />
               <!-- <div class="ph-label">G<br>JUICE!</div>
             <div class="ph-sub">500ml / 1000ml</div>
             <div class="ph-note">Ganti dengan foto produk</div> -->
@@ -312,16 +363,20 @@
             <span class="preorder-label">Pre-Order — Dibuat Fresh</span>
             <p class="product-ingredients">Celery, Nanas, Apel, Jeruk, Lemon, Bok Choy, Jahe (sedikit) &bull; Tanpa gula tambahan, hanya air</p>
             <p class="product-desc">Super juice untuk detoks dan energi. Kombinasi lengkap buah dan sayuran hijau yang membersihkan tubuh dari dalam sekaligus memberikan boost energi alami.</p>
-            <ul class="product-benefits">
+            <details class="product-benefits-details">
+              <summary>Kenali manfaat</summary>
+              <ul class="product-benefits">
               <li>Detoks dan dukung fungsi hati dengan celery dan bok choy</li>
               <li>Boost imun tinggi vitamin C dari jeruk dan lemon</li>
               <li>Lancarkan pencernaan dengan enzim bromelain dari nanas</li>
-              <li>Hidrasi kulit dari dalam dengan antioksidan buah segar</li>
-            </ul>
+                <li>Hidrasi kulit dari dalam dengan antioksidan buah segar</li>
+              </ul>
+            </details>
             <div class="product-price-row">
               <div class="price-chip"><span class="size">500ml</span> ><span class="price"> Rp 47.000</span></div>
               <div class="price-chip"><span class="size">1000ml</span> ><span class="price"> Rp 93.000</span></div>
             </div>
+            <a href="#order" class="product-order-link" data-preselect-product="G-Juice">Pesan G-Juice <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 
@@ -329,7 +384,7 @@
         <div class="product-row reverse reveal">
           <div class="product-image-wrap">
             <div class="product-image-placeholder ph-yellow">
-              <img src="assets/img/morning-juice.jpeg" alt="About Holy Shot!" class="about-image" />
+              <img src="assets/img/optimized/morning-juice.jpeg" alt="Morning Juice!" class="about-image" loading="lazy" />
             </div>
           </div>
           <div class="product-info">
@@ -338,16 +393,20 @@
             <span class="preorder-label">Pre-Order — Dibuat Fresh</span>
             <p class="product-ingredients">Nanas, Timun, Wortel &bull; Tanpa gula tambahan, hanya air</p>
             <p class="product-desc">Jus pagi yang menyegarkan untuk memulai hari. Rasa ringan dan segar dari kombinasi nanas, timun, dan wortel — sempurna untuk rutinitas pagimu.</p>
-            <ul class="product-benefits">
+            <details class="product-benefits-details">
+              <summary>Kenali manfaat</summary>
+              <ul class="product-benefits">
               <li>Hidrasi optimal dengan kandungan air tinggi dari timun</li>
               <li>Pencernaan lancar berkat serat dan enzim alami</li>
               <li>Kesehatan mata dan kulit dari beta-karoten wortel</li>
-              <li>Rendah kalori, cocok sebagai pendamping diet sehat</li>
-            </ul>
+                <li>Rendah kalori, cocok sebagai pendamping diet sehat</li>
+              </ul>
+            </details>
             <div class="product-price-row">
               <div class="price-chip"><span class="size">500ml</span> Rp 38.000</div>
               <div class="price-chip"><span class="size">1000ml</span> Rp 75.000</div>
             </div>
+            <a href="#order" class="product-order-link" data-preselect-product="Morning Juice">Pesan Morning Juice <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 
@@ -355,25 +414,37 @@
         <div class="product-row reveal bloody-bg">
           <div class="product-image-wrap">
             <div class="product-image-placeholder ph-maroon">
-              <img src="assets/img/bloody-punch.jpeg" alt="About Holy Shot!" class="about-image" />
+              <img src="assets/img/optimized/bloody-punch.jpeg" alt="Bloody Shot!" class="about-image" loading="lazy" />
             </div>
           </div>
           <div class="product-info">
             <span class="product-tag tag-maroon">Shot! Series</span>
             <h3 class="product-name">Bloody Shot!</h3>
             <span class="preorder-label">Pre-Order — Dibuat Fresh</span>
-            <p class="product-ingredients">Beetroot, Apel, Nanas, Jeruk, Lemon &bull; Tanpa gula tambahan, hanya air</p>
+            <p class="product-ingredients">Beetroot (bit), Wortel, Apel, Jeruk, Timun, Nanas &bull; Tanpa gula tambahan, hanya air</p>
             <p class="product-desc">Power shot dengan beetroot sebagai bintangnya. Kombinasi buah dan sayuran yang kaya vitamin C untuk kulit glowing dan tubuh yang lebih bertenaga.</p>
-            <ul class="product-benefits">
+            <details class="product-benefits-details">
+              <summary>Kenali manfaat</summary>
+              <ul class="product-benefits">
               <li>Detoks darah dengan beetroot untuk kulit lebih bersih dan cerah</li>
-              <li>Boost kolagen tinggi vitamin C dari nanas, jeruk, dan lemon</li>
+              <li>Boost kolagen tinggi vitamin C dari nanas dan jeruk</li>
               <li>Lancarkan aliran darah dan tingkatkan stamina</li>
-              <li>Bantu pencernaan dengan serat dan enzim dari apel dan nanas</li>
-            </ul>
+                <li>Bantu pencernaan dengan serat dan enzim dari apel dan nanas</li>
+              </ul>
+            </details>
             <div class="product-price-row">
               <div class="price-chip"><span class="size">500ml</span><span class="price"> Rp 43.000</span></div>
               <div class="price-chip"><span class="size">1000ml</span><span class="price"> Rp 85.000</span></div>
             </div>
+            <a href="#order" class="product-order-link" data-preselect-product="Bloody Shot">Pesan Bloody Shot <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Produk sebelumnya">&#8592;</button>
+            <div class="carousel-pagination" data-carousel-pagination></div>
+            <button class="carousel-arrow" type="button" data-carousel-next aria-label="Produk berikutnya">&#8594;</button>
+            <span class="carousel-status" data-carousel-status aria-live="polite"></span>
           </div>
         </div>
       </div>
@@ -387,9 +458,10 @@
           <h2 class="section-title">100% Pure Ingredients</h2>
           <p class="section-desc center">Versi lebih kecil, tetap murni. Sempurna untuk dicoba pertama kali atau sebagai daily shot.</p>
         </div>
-        <div class="pure-grid">
+        <div class="product-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Produk Pure Series">
+          <div class="pure-grid product-carousel-track" data-carousel-track tabindex="0">
           <div class="pure-card reveal">
-            <div class="pure-card-icon ph-orange"><img src="assets/img/gingr-shot.jpeg" alt="About Holy Shot!" class="pure-card-icon ph-maroon" /></div>
+            <div class="pure-image-wrap"><img src="assets/img/gingr-shot.jpeg" alt="Ginger Bold" class="pure-card-image" width="2624" height="3499" loading="lazy" decoding="async" /></div>
             <h4>Ginger Bold</h4>
             <span class="preorder-label dark">Pre-Order</span>
             <p class="pure-ingredients">Ginger, orange, lemon, turmeric</p>
@@ -397,9 +469,10 @@
               <div class="pure-price-row"><span class="pp-size">250ml</span><span class="pp-price">Rp 37.000</span></div>
               <div class="pure-price-row"><span class="pp-size">500ml</span><span class="pp-price">Rp 73.000</span></div>
             </div>
+            <a href="#order" class="pure-order-link" data-preselect-product="Ginger Bold">Pilih rasa <span aria-hidden="true">↗</span></a>
           </div>
           <div class="pure-card reveal reveal-delay-1">
-            <div class="pure-card-icon ph-gold"><img src="assets/img/glow-aura.jpeg" alt="About Holy Shot!" class="pure-card-icon ph-maroon" /></div>
+            <div class="pure-image-wrap"><img src="assets/img/glow-aura.jpeg" alt="Glow Aura" class="pure-card-image" width="2609" height="3479" loading="lazy" decoding="async" /></div>
             <h4>Glow Aura</h4>
             <span class="preorder-label dark">Pre-Order</span>
             <p class="pure-ingredients">Carrot, orange, lemon, a bit ginger</p>
@@ -407,9 +480,10 @@
               <div class="pure-price-row"><span class="pp-size">250ml</span><span class="pp-price">Rp 37.000</span></div>
               <div class="pure-price-row"><span class="pp-size">500ml</span><span class="pp-price">Rp 73.000</span></div>
             </div>
+            <a href="#order" class="pure-order-link" data-preselect-product="Glow Aura">Pilih rasa <span aria-hidden="true">↗</span></a>
           </div>
           <div class="pure-card reveal reveal-delay-2">
-            <div class="pure-card-icon ph-green"><img src="assets/img/GJuice.jpeg" alt="About Holy Shot!" class="pure-card-icon ph-maroon" /></div>
+            <div class="pure-image-wrap"><img src="assets/img/GJuice.jpeg" alt="G-Power!" class="pure-card-image" width="2269" height="3025" loading="lazy" decoding="async" /></div>
             <h4>G-Power!</h4>
             <span class="preorder-label dark">Pre-Order</span>
             <p class="pure-ingredients">Celery, apple, orange, lemon, pineapple, baby bok choy, a bit ginger</p>
@@ -417,9 +491,10 @@
               <div class="pure-price-row"><span class="pp-size">250ml</span><span class="pp-price">Rp 42.000</span></div>
               <div class="pure-price-row"><span class="pp-size">500ml</span><span class="pp-price">Rp 83.000</span></div>
             </div>
+            <a href="#order" class="pure-order-link" data-preselect-product="G-Power">Pilih rasa <span aria-hidden="true">↗</span></a>
           </div>
           <div class="pure-card reveal">
-            <div class="pure-card-icon ph-yellow"><img src="assets/img/morning-kick.jpeg" alt="About Holy Shot!" class="pure-card-icon ph-maroon" /></div>
+            <div class="pure-image-wrap"><img src="assets/img/morning-kick.jpeg" alt="Morning Kick" class="pure-card-image" width="2624" height="3499" loading="lazy" decoding="async" /></div>
             <h4>Morning Kick</h4>
             <span class="preorder-label dark">Pre-Order</span>
             <p class="pure-ingredients">Pineapple, cucumber, carrot</p>
@@ -427,9 +502,10 @@
               <div class="pure-price-row"><span class="pp-size">250ml</span><span class="pp-price">Rp 32.000</span></div>
               <div class="pure-price-row"><span class="pp-size">500ml</span><span class="pp-price">Rp 63.000</span></div>
             </div>
+            <a href="#order" class="pure-order-link" data-preselect-product="Morning Kick">Pilih rasa <span aria-hidden="true">↗</span></a>
           </div>
           <div class="pure-card reveal reveal-delay-1">
-            <div class="pure-card-icon ph-maroon"><img src="assets/img/bloody-punch.jpeg" alt="About Holy Shot!" class="pure-card-icon ph-maroon" /></div>
+            <div class="pure-image-wrap"><img src="assets/img/bloody-punch.jpeg" alt="Bloody Punch!" class="pure-card-image" width="2608" height="3477" loading="lazy" decoding="async" /></div>
             <h4>Bloody Punch!</h4>
             <span class="preorder-label dark">Pre-Order</span>
             <p class="pure-ingredients">Beetroot, pineapple, apple, carrot, lemon</p>
@@ -437,6 +513,14 @@
               <div class="pure-price-row"><span class="pp-size">250ml</span><span class="pp-price">Rp 37.000</span></div>
               <div class="pure-price-row"><span class="pp-size">500ml</span><span class="pp-price">Rp 73.000</span></div>
             </div>
+            <a href="#order" class="pure-order-link" data-preselect-product="Bloody Punch">Pilih rasa <span aria-hidden="true">↗</span></a>
+          </div>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Produk sebelumnya">&#8592;</button>
+            <div class="carousel-pagination" data-carousel-pagination></div>
+            <button class="carousel-arrow" type="button" data-carousel-next aria-label="Produk berikutnya">&#8594;</button>
+            <span class="carousel-status" data-carousel-status aria-live="polite"></span>
           </div>
         </div>
       </div>
@@ -446,108 +530,106 @@
     <section class="bundling-section" id="bundling">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">Bundling</span>
-          <h2 class="section-title">Paket Hemat</h2>
-          <p class="bundle-desc center">Lebih banyak, lebih hemat. Pilih paket bundling yang sesuai kebutuhanmu.</p>
+          <span class="section-tag">Lebih Banyak, Lebih Hemat</span>
+          <h2 class="section-title">Paket enak buat <em>stock up</em></h2>
+          <p class="bundle-desc center">Rasa favorit Holy Shot! dalam satu paket, tinggal pilih yang paling cocok buat rutinitasmu.</p>
         </div>
-        <div class="bundle-grid">
-          <div class="bundle-card bundle-yellow reveal">
-            <div class="bundle-name">Small A</div>
-            <ul class="bundle-items">
-              <li><span>Gingr Shot 500ml</span></li>
-              <li><span>Glow Shot 500ml</span></li>
-              <li><span>G-Juice 500ml</span></li>
-            </ul>
-            <div class="bundle-price">
-              <span class="discount-badge">HEMAT 4%</span>
-              <span class="old-price">Rp 124.000</span>
-              <span class="new-price">Rp 119.000</span>
-            </div>
-          </div>
 
-          <div class="bundle-card bundle-green reveal reveal-delay-1">
-            <div class="bundle-name">Small B</div>
-            <ul class="bundle-items">
-              <li><span>Gingr Shot 500ml</span></li>
-              <li><span>Glow Shot 500ml</span></li>
-              <li><span>G-Juice 500ml</span></li>
-              <li><span>Bloody Shot! 500ml</span></li>
-              <li><span>Morning Juice 500ml</span></li>
+        <article class="bundle-feature reveal">
+          <div class="bundle-feature-image">
+            <img src="assets/img/02-small-b.jpg" alt="Bundling Small B: lima botol Holy Shot! ukuran 500 ml" width="1200" height="1600" loading="lazy" decoding="async" />
+          </div>
+          <div class="bundle-feature-copy">
+            <span class="bundle-feature-badge"><span aria-hidden="true">★</span> Paling lengkap</span>
+            <p class="bundle-feature-kicker">Kenalan dengan semua favorit</p>
+            <h3>Small B</h3>
+            <p class="bundle-feature-desc">Lima rasa, lima botol, satu paket yang siap nemenin rutinitas sehatmu. Pilihan paling pas buat mulai coba Holy Shot! bareng-bareng.</p>
+            <ul class="bundle-feature-points">
+              <li>5 botol favorit, masing-masing 500 ml</li>
+              <li>Gingr, Glow, G-Juice, Bloody &amp; Morning Juice</li>
+              <li>Lebih hemat Rp 10.000 dibanding beli satuan</li>
             </ul>
-            <div class="bundle-price">
-              <span class="discount-badge">HEMAT 5%</span>
+            <div class="bundle-feature-price">
               <span class="old-price">Rp 205.000</span>
               <span class="new-price">Rp 195.000</span>
+              <span class="discount-badge">HEMAT 5%</span>
             </div>
+            <a href="#order" class="bundle-feature-cta" data-preselect-product="Small B">Pilih paket Small B <span aria-hidden="true">↗</span></a>
           </div>
+        </article>
 
-          <div class="bundle-card bundle-green reveal reveal-delay-1">
+        <div class="bundle-grid">
+          <article class="bundle-card bundle-green reveal">
+            <div class="bundle-card-image"><img src="assets/img/03-ginger-haters.jpg" alt="Bundling Ginger Haters dengan Bloody Shot! dan Morning Juice" width="1200" height="1600" loading="lazy" decoding="async" /></div>
             <div class="bundle-name">Ginger Haters</div>
-            <ul class="bundle-items">
-              <li><span>Bloody Shot 500ml</span></li>
-              <li><span>Morning Juice 500ml</span></li>
-            </ul>
+            <p class="bundle-card-description">Dua rasa segar tanpa jahe, cocok buat yang suka rasa ringan.</p>
             <div class="bundle-price">
-              <span class="discount-badge">HEMAT 7%</span>
               <span class="old-price">Rp 81.000</span>
               <span class="new-price">Rp 75.000</span>
+              <span class="bundle-saving">Hemat Rp 6.000</span>
             </div>
-          </div>
+            <a href="#order" class="bundle-order-link" data-preselect-product="Ginger Haters">Pilih paket <span aria-hidden="true">↗</span></a>
+          </article>
 
-          <div class="bundle-card bundle-orange reveal reveal-delay-2">
-            <div class="bundle-name">Big A</div>
-            <ul class="bundle-items">
-              <li><span>Gingr Shot 1000ml</span></li>
-              <li><span>Glow Shot 1000ml</span></li>
-              <li><span>G-Juice 1000ml</span></li>
-            </ul>
+          <article class="bundle-card bundle-yellow reveal">
+            <div class="bundle-card-image"><img src="assets/img/01-small-a.jpg" alt="Bundling Small A berisi Gingr Shot, Glow Shot, dan G-Juice ukuran 500 ml" width="1200" height="1600" loading="lazy" decoding="async" /></div>
+            <div class="bundle-name">Small A</div>
+            <p class="bundle-card-description">Tiga rasa andalan dalam ukuran 500 ml, pas buat mulai coba.</p>
             <div class="bundle-price">
-              <span class="discount-badge">HEMAT 6%</span>
+              <span class="old-price">Rp 124.000</span>
+              <span class="new-price">Rp 119.000</span>
+              <span class="bundle-saving">Hemat Rp 5.000</span>
+            </div>
+            <a href="#order" class="bundle-order-link" data-preselect-product="Small A">Pilih paket <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="bundle-card bundle-orange reveal">
+            <div class="bundle-card-image"><img src="assets/img/04-big-a.jpg" alt="Bundling Big A berisi tiga rasa andalan ukuran 1000 ml" width="1200" height="1600" loading="lazy" decoding="async" /></div>
+            <div class="bundle-name">Big A</div>
+            <p class="bundle-card-description">Stok tiga rasa favorit dalam botol besar 1000 ml.</p>
+            <div class="bundle-price">
               <span class="old-price">Rp 245.000</span>
               <span class="new-price">Rp 230.000</span>
+              <span class="bundle-saving">Hemat Rp 15.000</span>
             </div>
-          </div>
+            <a href="#order" class="bundle-order-link" data-preselect-product="Big A">Pilih paket <span aria-hidden="true">↗</span></a>
+          </article>
 
-          <div class="bundle-card bundle-maroon reveal">
+          <article class="bundle-card bundle-maroon reveal">
+            <div class="bundle-card-image"><img src="assets/img/05-all-i-want-is-big.jpg" alt="Bundling All I Want is BIG dengan lima rasa Holy Shot! ukuran 1000 ml" width="1200" height="1600" loading="lazy" decoding="async" /></div>
             <div class="bundle-name">All I Want is BIG</div>
-            <ul class="bundle-items">
-              <li><span>Gingr Shot 1000ml</span></li>
-              <li><span>Glow Shot 1000ml</span></li>
-              <li><span>G-Juice 1000ml</span></li>
-              <li><span>Bloody Shot 1000ml</span></li>
-              <li><span>Morning Juice 1000ml</span></li>
-            </ul>
+            <p class="bundle-card-description">Lima rasa ukuran 1000 ml buat stok penuh dan berbagi.</p>
             <div class="bundle-price">
-              <span class="discount-badge">HEMAT 4%</span>
               <span class="old-price">Rp 405.000</span>
               <span class="new-price">Rp 390.000</span>
+              <span class="bundle-saving">Hemat Rp 15.000</span>
             </div>
-          </div>
+            <a href="#order" class="bundle-order-link" data-preselect-product="All I Want is BIG">Pilih paket <span aria-hidden="true">↗</span></a>
+          </article>
 
-          <div class="bundle-card bundle-green reveal reveal-delay-1">
+          <article class="bundle-card bundle-green reveal">
+            <div class="bundle-card-image"><img src="assets/img/06-ginger-haters-plus.jpg" alt="Bundling Ginger Haters+ dengan Bloody Shot! dan Morning Juice ukuran 1000 ml" width="1200" height="1600" loading="lazy" decoding="async" /></div>
             <div class="bundle-name">Ginger Haters+</div>
-            <ul class="bundle-items">
-              <li><span>Bloody Shot! 1000ml</span></li>
-              <li><span>Morning Juice 1000ml</span></li>
-            </ul>
+            <p class="bundle-card-description">Dua rasa tanpa jahe dalam ukuran 1000 ml.</p>
             <div class="bundle-price">
-              <span class="discount-badge">HEMAT 3%</span>
               <span class="old-price">Rp 160.000</span>
               <span class="new-price">Rp 155.000</span>
+              <span class="bundle-saving">Hemat Rp 5.000</span>
             </div>
-          </div>
+            <a href="#order" class="bundle-order-link" data-preselect-product="Ginger Haters+">Pilih paket <span aria-hidden="true">↗</span></a>
+          </article>
 
-          <div class="bundle-card bundle-yellow reveal reveal-delay-2">
+          <article class="bundle-card bundle-yellow reveal">
+            <div class="bundle-card-image"><img src="assets/img/07-ginger-addict.jpg" alt="Bundling Ginger Addict berisi dua Gingr Shot! ukuran 1000 ml" width="1200" height="1600" loading="lazy" decoding="async" /></div>
             <div class="bundle-name">Ginger Addict</div>
-            <ul class="bundle-items">
-              <li><span>2 Gingr Shot! 1000ml</span></li>
-            </ul>
+            <p class="bundle-card-description">Dua botol Gingr Shot! ukuran besar buat pecinta jahe.</p>
             <div class="bundle-price">
-              <span class="discount-badge">HEMAT 3%</span>
               <span class="old-price">Rp 150.000</span>
               <span class="new-price">Rp 145.000</span>
+              <span class="bundle-saving">Hemat Rp 5.000</span>
             </div>
-          </div>
+            <a href="#order" class="bundle-order-link" data-preselect-product="Ginger Addict">Pilih paket <span aria-hidden="true">↗</span></a>
+          </article>
         </div>
       </div>
     </section>
@@ -571,7 +653,14 @@
             <div class="step-content-left">
               <div class="how-card align-left">
                 <div class="how-icon"></div>
-                <h4><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#314D1C"><path d="M120-80v-80h80v-128q-35-12-57.5-42.5T120-400v-320h240v320q0 39-22.5 69.5T280-288v128h80v80H120Zm80-440h80v-120h-80v120Zm40 160q17 0 28.5-11.5T280-400v-40h-80v40q0 17 11.5 28.5T240-360ZM520-80q-33 0-56.5-23.5T440-160v-382q0-26 15-46.5t39-29.5l38-14q14-5 21-14.5t7-23.5v-170q0-17 11.5-28.5T600-880h120q17 0 28.5 11.5T760-840v170q0 14 7 23.5t21 14.5l38 14q24 9 39 29.5t15 46.5v382q0 33-23.5 56.5T800-80H520Zm120-680h40v-40h-40v40ZM520-480h280v-62l-38-14q-38-14-60-44t-22-68v-12h-40v12q0 38-22 68t-60 44l-38 14v62Zm0 320h280v-80H520v80Zm0-160h280v-80H520v80ZM240-440Zm280 120v-80 80Z"/></svg> Takaran </h4>
+                <h4>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#314D1C">
+                    <path
+                      d="M120-80v-80h80v-128q-35-12-57.5-42.5T120-400v-320h240v320q0 39-22.5 69.5T280-288v128h80v80H120Zm80-440h80v-120h-80v120Zm40 160q17 0 28.5-11.5T280-400v-40h-80v40q0 17 11.5 28.5T240-360ZM520-80q-33 0-56.5-23.5T440-160v-382q0-26 15-46.5t39-29.5l38-14q14-5 21-14.5t7-23.5v-170q0-17 11.5-28.5T600-880h120q17 0 28.5 11.5T760-840v170q0 14 7 23.5t21 14.5l38 14q24 9 39 29.5t15 46.5v382q0 33-23.5 56.5T800-80H520Zm120-680h40v-40h-40v40ZM520-480h280v-62l-38-14q-38-14-60-44t-22-68v-12h-40v12q0 38-22 68t-60 44l-38 14v62Zm0 320h280v-80H520v80Zm0-160h280v-80H520v80ZM240-440Zm280 120v-80 80Z"
+                    />
+                  </svg>
+                  Takaran
+                </h4>
                 <p>50–100ml per sekali minum. Cukup konsumsi sehari sekali.</p>
               </div>
             </div>
@@ -588,7 +677,14 @@
             <div class="step-content-right">
               <div class="how-card">
                 <div class="how-icon"></div>
-                <h4><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#314D1C"><path d="M440-800v-120h80v120h-80Zm0 760v-120h80v120h-80Zm360-400v-80h120v80H800Zm-760 0v-80h120v80H40Zm708-252-56-56 70-72 58 58-72 70ZM198-140l-58-58 72-70 56 56-70 72Zm564 0-70-72 56-56 72 70-58 58ZM212-692l-72-70 58-58 70 72-56 56Zm98 382q-70-70-70-170t70-170q70-70 170-70t170 70q70 70 70 170t-70 170q-70 70-170 70t-170-70Zm283.5-56.5Q640-413 640-480t-46.5-113.5Q547-640 480-640t-113.5 46.5Q320-547 320-480t46.5 113.5Q413-320 480-320t113.5-46.5ZM480-480Z"/></svg> Waktu Terbaik</h4>
+                <h4>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#314D1C">
+                    <path
+                      d="M440-800v-120h80v120h-80Zm0 760v-120h80v120h-80Zm360-400v-80h120v80H800Zm-760 0v-80h120v80H40Zm708-252-56-56 70-72 58 58-72 70ZM198-140l-58-58 72-70 56 56-70 72Zm564 0-70-72 56-56 72 70-58 58ZM212-692l-72-70 58-58 70 72-56 56Zm98 382q-70-70-70-170t70-170q70-70 170-70t170 70q70 70 70 170t-70 170q-70 70-170 70t-170-70Zm283.5-56.5Q640-413 640-480t-46.5-113.5Q547-640 480-640t-113.5 46.5Q320-547 320-480t46.5 113.5Q413-320 480-320t113.5-46.5ZM480-480Z"
+                    />
+                  </svg>
+                  Waktu Terbaik
+                </h4>
                 <p>Pagi hari saat perut kosong, sebelum makan. Jika punya asam lambung, sesuaikan dengan kondisi tubuh.</p>
               </div>
             </div>
@@ -599,7 +695,14 @@
             <div class="step-content-left">
               <div class="how-card align-left">
                 <div class="how-icon"></div>
-                <h4><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#314D1C"><path d="M279-80q-31 0-53.5-20.5T200-151l-80-729h720l-80 729q-3 30-25.5 50.5T681-80H279Zm-43-480 44 400h400l44-400H236Zm-10-80h508l16-160H210l16 160Zm230 350q-10-10-10-24 0-15 8.5-34.5T480-393q17 25 25.5 44.5T514-314q0 14-10 24t-24 10q-14 0-24-10Zm105 57q33-33 33-81 0-41-26.5-89T480-520q-61 69-87.5 117T366-314q0 48 33 81t81 33q48 0 81-33Zm-325 73h488-488Z"/></svg> Kocok Dahulu</h4>
+                <h4>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#314D1C">
+                    <path
+                      d="M279-80q-31 0-53.5-20.5T200-151l-80-729h720l-80 729q-3 30-25.5 50.5T681-80H279Zm-43-480 44 400h400l44-400H236Zm-10-80h508l16-160H210l16 160Zm230 350q-10-10-10-24 0-15 8.5-34.5T480-393q17 25 25.5 44.5T514-314q0 14-10 24t-24 10q-14 0-24-10Zm105 57q33-33 33-81 0-41-26.5-89T480-520q-61 69-87.5 117T366-314q0 48 33 81t81 33q48 0 81-33Zm-325 73h488-488Z"
+                    />
+                  </svg>
+                  Kocok Dahulu
+                </h4>
                 <p>Sari buah mudah mengendap di dasar botol. Kocok sebelum minum untuk hasil terbaik.</p>
               </div>
             </div>
@@ -614,7 +717,13 @@
             <div class="step-content-right">
               <div class="how-card">
                 <div class="how-icon"></div>
-                <h4><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#314D1C"><path d="M440-80v-73l-64 54-52-61 116-98v-152l-132 76-27 149-79-14 15-83-64 37-40-69 64-37-79-29 27-75 143 51 132-76-132-76-143 52-27-76 79-28-64-37 40-69 64 37-15-83 79-14 27 149 132 76v-152l-116-98 52-61 64 54v-74h80v74l64-54 52 61-116 98v152l131-76 27-149 79 14-15 83 64-37 40 69-64 37 79 28-27 76-143-52-131 76 131 76 143-51 27 75-79 29 64 37-40 69-64-37 15 83-79 14-27-149-131-76v152l116 98-52 61-64-54v73h-80Z"/></svg>Simpan di Kulkas </h4>
+                <h4>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#314D1C">
+                    <path
+                      d="M440-80v-73l-64 54-52-61 116-98v-152l-132 76-27 149-79-14 15-83-64 37-40-69 64-37-79-29 27-75 143 51 132-76-132-76-143 52-27-76 79-28-64-37 40-69 64 37-15-83 79-14 27 149 132 76v-152l-116-98 52-61 64 54v-74h80v74l64-54 52 61-116 98v152l131-76 27-149 79 14-15 83 64-37 40 69-64 37 79 28-27 76-143-52-131 76 131 76 143-51 27 75-79 29 64 37-40 69-64-37 15 83-79 14-27-149-131-76v152l116 98-52 61-64-54v73h-80Z"
+                    /></svg
+                  >Simpan di Kulkas
+                </h4>
                 <p>Gingr Shot! & Glow Shot! tahan 10–12 hari di kulkas. Bisa lebih lama jika disimpan di freezer.</p>
                 <p>Selain dua produk diatas hanya bertahan 3-5 hari di kulkas</p>
               </div>
@@ -624,7 +733,7 @@
       </div>
     </section>
 
-<!-- TESTIMONI & ULASAN SECTION -->
+    <!-- TESTIMONI & ULASAN SECTION -->
     <section class="testi-ulasan-section" id="testimoni">
       <div class="container">
         <div class="section-header reveal">
@@ -636,18 +745,46 @@
         <!-- TAB NAV -->
         <div class="tu-tabs reveal">
           <button class="tu-tab active" data-tab="testimoni" onclick="switchTab('testimoni')">
-            <span class="tu-tab-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m363-390 117-71 117 71-31-133 104-90-137-11-53-126-53 126-137 11 104 90-31 133ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></svg></span> Testimoni
+            <span class="tu-tab-icon"
+              ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                <path
+                  d="m363-390 117-71 117 71-31-133 104-90-137-11-53-126-53 126-137 11 104 90-31 133ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"
+                /></svg
+            ></span>
+            Testimoni
           </button>
           <button class="tu-tab" data-tab="ulasan" onclick="switchTab('ulasan')">
-            <span class="tu-tab-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M240-400h122l200-200q9-9 13.5-20.5T580-643q0-11-5-21.5T562-684l-36-38q-9-9-20-13.5t-23-4.5q-11 0-22.5 4.5T440-722L240-522v122Zm280-243-37-37 37 37ZM300-460v-38l101-101 20 18 18 20-101 101h-38Zm121-121 18 20-38-38 20 18Zm26 181h273v-80H527l-80 80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></svg></span> Tulis Ulasan
+            <span class="tu-tab-icon"
+              ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                <path
+                  d="M240-400h122l200-200q9-9 13.5-20.5T580-643q0-11-5-21.5T562-684l-36-38q-9-9-20-13.5t-23-4.5q-11 0-22.5 4.5T440-722L240-522v122Zm280-243-37-37 37 37ZM300-460v-38l101-101 20 18 18 20-101 101h-38Zm121-121 18 20-38-38 20 18Zm26 181h273v-80H527l-80 80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"
+                /></svg
+            ></span>
+            Tulis Ulasan
           </button>
           <div class="tu-tab-indicator" id="tuTabIndicator"></div>
         </div>
 
         <!-- TAB: TESTIMONI -->
         <div class="tu-content tu-content--active" id="tab-testimoni">
-          <div class="tu-testi-grid reveal" id="testiGrid">
-            <!-- buat naro yg lgsg dari sheet  -->
+          <div class="tu-list-wrap reveal">
+            <div class="tu-reviews-panel">
+              <div class="tu-list-header">
+                <h3 class="tu-list-title">Ulasan Pelanggan</h3>
+                <div class="tu-list-summary">
+                  <span class="tu-list-count" id="reviewCount">Memuat ulasan...</span>
+                  <span class="tu-review-average" id="reviewAverage"></span>
+                </div>
+              </div>
+
+              <div class="tu-review-list" id="reviewList" role="region" aria-label="Daftar ulasan pelanggan" tabindex="0">
+                <div class="tu-review-items" id="reviewItems"></div>
+                <div class="tu-review-status" id="reviewStatus" role="status" aria-live="polite"><span class="tu-review-spinner" aria-hidden="true"></span> Memuat ulasan...</div>
+                <button class="tu-review-action" id="reviewLoadMore" type="button" onclick="loadMoreReviews()" hidden>Lihat lebih banyak</button>
+                <button class="tu-review-action" id="reviewRetry" type="button" onclick="retryReviews()" hidden>Coba lagi</button>
+                <div class="tu-review-sentinel" id="reviewSentinel" aria-hidden="true"></div>
+              </div>
+            </div>
           </div>
 
           <div class="tu-cta-row reveal">
@@ -662,7 +799,13 @@
             <!-- LEFT: Form -->
             <div class="tu-form-wrap reveal">
               <div class="tu-form-header">
-                <div class="tu-form-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M240-400h122l200-200q9-9 13.5-20.5T580-643q0-11-5-21.5T562-684l-36-38q-9-9-20-13.5t-23-4.5q-11 0-22.5 4.5T440-722L240-522v122Zm280-243-37-37 37 37ZM300-460v-38l101-101 20 18 18 20-101 101h-38Zm121-121 18 20-38-38 20 18Zm26 181h273v-80H527l-80 80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></svg></div>
+                <div class="tu-form-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                    <path
+                      d="M240-400h122l200-200q9-9 13.5-20.5T580-643q0-11-5-21.5T562-684l-36-38q-9-9-20-13.5t-23-4.5q-11 0-22.5 4.5T440-722L240-522v122Zm280-243-37-37 37 37ZM300-460v-38l101-101 20 18 18 20-101 101h-38Zm121-121 18 20-38-38 20 18Zm26 181h273v-80H527l-80 80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"
+                    />
+                  </svg>
+                </div>
                 <div>
                   <h3 class="tu-form-title">Tulis Ulasanmu</h3>
                   <p class="tu-form-subtitle">Ceritakan pengalamanmu dan bantu yang lain!</p>
@@ -731,58 +874,6 @@
                 <p class="tu-form-note">Ulasan akan ditampilkan setelah diverifikasi oleh admin.</p>
               </div>
             </div>
-
-            <!-- RIGHT: Ulasan List -->
-            <div class="tu-list-wrap reveal reveal-delay-1">
-              <div class="tu-list-header">
-                <h3 class="tu-list-title">Ulasan Pelanggan</h3>
-                <span class="tu-list-count" id="reviewCount">3 ulasan</span>
-              </div>
-
-              <div class="tu-review-list" id="reviewList">
-                <div class="tu-review-card">
-                  <div class="tu-review-card-top">
-                    <div class="tu-review-avatar">A</div>
-                    <div class="tu-review-meta">
-                      <span class="tu-review-name">Andita.</span>
-                      <span class="tu-review-city">Jakarta</span>
-                    </div>
-                    <span class="tu-review-badge">Gingr Shot!</span>
-                  </div>
-                  <div class="tu-review-stars">★★★★★</div>
-                  <p class="tu-review-text">"Awalnya coba Gingr Shot karena penasaran, ternyata rutin minum seminggu badan berasa lebih enteng dan pencernaan membaik. Sekarang sudah langganan!"</p>
-                  <div class="tu-review-date">12 Mei 2025</div>
-                </div>
-
-                <div class="tu-review-card">
-                  <div class="tu-review-card-top">
-                    <div class="tu-review-avatar">A</div>
-                    <div class="tu-review-meta">
-                      <span class="tu-review-name">Angg**i.</span>
-                      <span class="tu-review-city">Bandung</span>
-                    </div>
-                    <span class="tu-review-badge">Glow Shot!</span>
-                  </div>
-                  <div class="tu-review-stars">★★★★★</div>
-                  <p class="tu-review-text">"Glow Shot bikin kulit aku beneran lebih cerah setelah rutin 2 minggu. Rasanya juga enak, nggak kayak jamu biasa. Highly recommended!"</p>
-                  <div class="tu-review-date">8 Mei 2025</div>
-                </div>
-
-                <div class="tu-review-card">
-                  <div class="tu-review-card-top">
-                    <div class="tu-review-avatar">D</div>
-                    <div class="tu-review-meta">
-                      <span class="tu-review-name">Dewi K.</span>
-                      <span class="tu-review-city">Surabaya</span>
-                    </div>
-                    <span class="tu-review-badge">Morning Juice!</span>
-                  </div>
-                  <div class="tu-review-stars">★★★★★</div>
-                  <p class="tu-review-text">"Morning Juice jadi ritual pagi aku sekarang. Segar banget, bikin mood bagus dari pagi. Anak-anak juga suka!"</p>
-                  <div class="tu-review-date">3 Mei 2025</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -792,95 +883,108 @@
     <section class="faq-section" id="faq">
       <div class="container">
         <div class="section-header reveal">
-        <span class="section-tag">FAQ</span>
-        <h2 class="section-title">Pertanyaan yang Sering Ditanyakan</h2>
-      <p class="section-desc center">Masih bingung? Cek jawaban dari pertanyaan yang paling sering ditanyakan pelanggan kami.</p>
-      </div>
-
-      <div class="faq-list reveal">
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Apa itu sistem Pre-Order?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Holy Shot! menggunakan sistem Pre-Order, artinya produk baru dibuat <strong>setelah pesanan dikonfirmasi</strong>. Tidak ada stok lama, tidak ada pengawet. Begitu kamu pesan, kami baru mulai meracik. Estimasi pembuatan 1–2 hari kerja.</p>
+          <span class="section-tag">FAQ</span>
+          <h2 class="section-title">Pertanyaan yang Sering Ditanyakan</h2>
+          <p class="section-desc center">Masih bingung? Cek jawaban dari pertanyaan yang paling sering ditanyakan pelanggan kami.</p>
         </div>
-      </div>
 
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Berapa lama produk bisa bertahan?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Karena tanpa pengawet, daya tahan produk bervariasi:</p>
-          <ul>
-            <li><strong>Gingr Shot! &amp; Glow Shot!</strong> — tahan <strong>10–12 hari</strong> di kulkas (lebih lama di freezer)</li>
-            <li><strong>G-Juice!, Morning Juice!, Bloody Shot!, Pure Series &amp; Tepache</strong> — tahan <strong>3–5 hari</strong> di kulkas</li>
-          </ul>
-          <p>Kami sarankan segera dikonsumsi untuk kesegaran dan nutrisi optimal.</p>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question" id="faq-question-1" aria-controls="faq-answer-1" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Apa itu sistem Pre-Order?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-1" aria-hidden="true" inert>
+              <p>
+                Holy Shot! menggunakan sistem Pre-Order, artinya produk baru dibuat <strong>setelah pesanan dikonfirmasi</strong>. Tidak ada stok lama, tidak ada pengawet. Begitu kamu pesan, kami baru mulai meracik. Estimasi pembuatan 1–2
+                hari kerja.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-question-2" aria-controls="faq-answer-2" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Berapa lama produk bisa bertahan?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-2" aria-hidden="true" inert>
+              <p>Karena tanpa pengawet, daya tahan produk bervariasi:</p>
+              <ul>
+                <li><strong>Gingr Shot! &amp; Glow Shot!</strong> — tahan <strong>10–12 hari</strong> di kulkas (lebih lama di freezer)</li>
+                <li><strong>G-Juice!, Morning Juice!, Bloody Shot!, Pure Series &amp; Tepache</strong> — tahan <strong>3–5 hari</strong> di kulkas</li>
+              </ul>
+              <p>Kami sarankan segera dikonsumsi untuk kesegaran dan nutrisi optimal.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-question-3" aria-controls="faq-answer-3" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Apakah bisa dikirim ke luar kota?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-3" aria-hidden="true" inert>
+              <p>
+                Saat ini kami melayani pengiriman lokal dan sekitarnya via kurir same-day. Untuk pengiriman ke luar kota, silakan konsultasikan via WhatsApp admin agar kami bisa cek ketersediaan dan opsi pengiriman yang aman untuk produk
+                segar.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-question-4" aria-controls="faq-answer-4" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Metode pembayaran apa saja yang diterima?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-4" aria-hidden="true" inert>
+              <p>Setelah checkout via WhatsApp, admin akan mengirimkan detail pembayaran. Kami menerima:</p>
+              <ul>
+                <li>Transfer bank (BCA, Mandiri, BRI)</li>
+                <li>E-wallet (GoPay, OVO, DANA, ShopeePay)</li>
+                <li>QRIS</li>
+              </ul>
+              <p>Pembayaran dilakukan sebelum produk dibuat.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-question-5" aria-controls="faq-answer-5" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Apakah produk ini aman untuk ibu hamil atau anak-anak?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-5" aria-hidden="true" inert>
+              <p>
+                Produk kami dibuat dari 100% bahan alami tanpa pengawet dan pemanis buatan. Namun, karena kondisi setiap orang berbeda, <strong>kami sarankan untuk berkonsultasi dengan dokter terlebih dahulu</strong> sebelum mengonsumsi,
+                terutama untuk ibu hamil, menyusui, atau anak-anak di bawah usia tertentu.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-question-6" aria-controls="faq-answer-6" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Berapa ongkos kirimnya?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-6" aria-hidden="true" inert>
+              <p>
+                Ongkir dihitung berdasarkan jarak pengiriman dan akan diinformasikan oleh admin via WhatsApp setelah kamu melakukan pemesanan. Kamu juga bisa memilih <strong>ambil langsung</strong> jika lokasinya memungkinkan (bebas
+                ongkir).
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" id="faq-question-7" aria-controls="faq-answer-7" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Bisakah request kombinasi rasa custom?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-7" aria-hidden="true" inert>
+              <p>
+                Untuk saat ini kami menyediakan varian rasa yang sudah teruji dan terstandar. Namun, jika kamu punya alergi tertentu atau ingin request khusus, silakan sampaikan via WhatsApp — kami akan berusaha mengakomodasi jika
+                memungkinkan.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Apakah bisa dikirim ke luar kota?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Saat ini kami melayani pengiriman lokal dan sekitarnya via kurir same-day. Untuk pengiriman ke luar kota, silakan konsultasikan via WhatsApp admin agar kami bisa cek ketersediaan dan opsi pengiriman yang aman untuk produk segar.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Metode pembayaran apa saja yang diterima?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Setelah checkout via WhatsApp, admin akan mengirimkan detail pembayaran. Kami menerima:</p>
-          <ul>
-            <li>Transfer bank (BCA, Mandiri, BRI)</li>
-            <li>E-wallet (GoPay, OVO, DANA, ShopeePay)</li>
-            <li>QRIS</li>
-          </ul>
-          <p>Pembayaran dilakukan sebelum produk dibuat.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Apakah produk ini aman untuk ibu hamil atau anak-anak?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Produk kami dibuat dari 100% bahan alami tanpa pengawet dan pemanis buatan. Namun, karena kondisi setiap orang berbeda, <strong>kami sarankan untuk berkonsultasi dengan dokter terlebih dahulu</strong> sebelum mengonsumsi, terutama untuk ibu hamil, menyusui, atau anak-anak di bawah usia tertentu.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Berapa ongkos kirimnya?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Ongkir dihitung berdasarkan jarak pengiriman dan akan diinformasikan oleh admin via WhatsApp setelah kamu melakukan pemesanan. Kamu juga bisa memilih <strong>ambil langsung</strong> jika lokasinya memungkinkan (bebas ongkir).</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Bisakah request kombinasi rasa custom?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Untuk saat ini kami menyediakan varian rasa yang sudah teruji dan terstandar. Namun, jika kamu punya alergi tertentu atau ingin request khusus, silakan sampaikan via WhatsApp — kami akan berusaha mengakomodasi jika memungkinkan.</p>
-        </div>
-      </div>
-
-      </div>
       </div>
     </section>
 
@@ -904,24 +1008,24 @@
             <label for="product">Pilih Produk</label>
             <select id="product">
               <option value="" disabled selected>-- Pilih produk --</option>
-              <optgroup label="Tepache (250ml & 500ml)">
+              <optgroup label="Tepache">
                 <option value="Tepache">Tepache</option>
               </optgroup>
-              <optgroup label="Shot! Series (500ml & 1000ml)">
+              <optgroup label="Shot! Series">
                 <option value="Gingr Shot">Gingr Shot!</option>
                 <option value="Glow Shot">Glow Shot!</option>
                 <option value="G-Juice">G-Juice!</option>
                 <option value="Morning Juice">Morning Juice!</option>
                 <option value="Bloody Shot">Bloody Shot!</option>
               </optgroup>
-              <optgroup label="Pure Series (250ml & 500ml)">
+              <optgroup label="Pure Series">
                 <option value="Ginger Bold">Ginger Bold</option>
                 <option value="Glow Aura">Glow Aura</option>
                 <option value="G-Power">G-Power!</option>
                 <option value="Morning Kick">Morning Kick</option>
                 <option value="Bloody Punch">Bloody Punch!</option>
               </optgroup>
-              <optgroup label="Bundling">
+              <optgroup label="Paket Bundling">
                 <option value="Small A">Small A</option>
                 <option value="Small B">Small B</option>
                 <option value="Big A">Big A</option>
@@ -941,45 +1045,57 @@
             </div>
             <div class="form-group">
               <label for="qty">Jumlah</label>
-              <input type="number" id="qty" min="1" value="1" placeholder="1" />
+              <div class="qty-stepper">
+                <button type="button" class="qty-stepper-button" aria-label="Kurangi jumlah produk" onclick="adjustProductQuantity(-1)">−</button>
+                <input type="number" id="qty" min="1" step="1" value="1" inputmode="numeric" />
+                <button type="button" class="qty-stepper-button" aria-label="Tambah jumlah produk" onclick="adjustProductQuantity(1)">+</button>
+              </div>
             </div>
             <button type="button" class="btn-add" id="btnAdd" onclick="addToCart()">+ Tambah</button>
           </div>
+          <p class="selected-subtotal" id="productSubtotal" aria-live="polite">Subtotal: Rp 0</p>
+          <p class="order-inline-error" id="addItemError" role="alert" aria-live="polite"></p>
 
           <!-- KERANJANG -->
           <div class="cart-section">
             <div class="cart-title">
               Keranjang Belanja
-              <span class="cart-count" id="cartCount"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg></span>
+              <span class="cart-count" id="cartCount"
+                ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                  <path
+                    d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"
+                  /></svg
+              ></span>
             </div>
-            <div id="cartContent">
-              <div class="cart-empty">Keranjang masih kosong. Tambahkan produk di atas.</div>
+            <div id="cartContent" aria-live="polite" aria-relevant="additions text">
+              <div class="cart-empty"><strong>Keranjang masih kosong</strong><span>Tambahkan produk untuk mulai menyusun pesanan.</span></div>
             </div>
           </div>
 
           <!-- INFO CUSTOMER -->
           <div class="customer-section">
             <span class="section-tag" style="margin-bottom: 16px">Info Pemesan</span>
-            <div class="form-row" style="margin-top: 16px">
+            <div class="form-row customer-fields" style="margin-top: 16px">
               <div class="form-group">
-                <label for="custName">Nama Lengkap</label>
-                <input type="text" id="custName" placeholder="Nama kamu" />
+                <label for="custName">Nama Lengkap <span class="field-required">Wajib</span></label>
+                <input type="text" id="custName" placeholder="Nama kamu" autocomplete="name" required />
               </div>
               <div class="form-group">
-                <label for="custAddress">Alamat (opsional)</label>
-                <input type="text" id="custAddress" placeholder="Alamat pengiriman" />
-              </div>
-              <div class="form-group">
-                <label for="custPhone">Nomor Handphone (opsional)</label>
-                <input type="text" id="custPhone" placeholder="Nomor handphone" />
+                <label for="custPhone">Nomor Handphone <span class="field-required">Wajib</span></label>
+                <input type="tel" id="custPhone" placeholder="08xx, 62xx, atau +62xx" autocomplete="tel" inputmode="tel" required />
               </div>
             </div>
             <div class="form-group">
-              <label for="custNote">Catatan (opsional)</label>
+              <label for="custAddress">Alamat <span class="field-optional">Opsional</span></label>
+              <input type="text" id="custAddress" placeholder="Alamat pengiriman" autocomplete="street-address" />
+            </div>
+            <div class="form-group">
+              <label for="custNote">Catatan <span class="field-optional">Opsional</span></label>
               <input type="text" id="custNote" placeholder="Misal: Tambah es, kirim di pagi hari, dll." />
             </div>
           </div>
 
+          <p class="checkout-message" id="checkoutMessage" role="status" aria-live="polite">Tambahkan produk, isi nama lengkap, dan nomor HP Indonesia yang valid untuk checkout.</p>
           <button type="button" class="btn-whatsapp" id="btnCheckout" onclick="checkoutWhatsApp()" disabled>
             <svg viewBox="0 0 24 24">
               <path
@@ -992,7 +1108,12 @@
 
           <!-- PRE-ORDER NOTE -->
           <div class="preorder-note">
-            <span class="preorder-note-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m691-150 139-138-42-42-97 95-39-39-42 43 81 81ZM240-600h480v-80H240v80ZM720-40q-83 0-141.5-58.5T520-240q0-83 58.5-141.5T720-440q83 0 141.5 58.5T920-240q0 83-58.5 141.5T720-40ZM120-80v-680q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v267q-19-9-39-15t-41-9v-243H200v562h243q5 31 15.5 59T486-86l-6 6-60-60-60 60-60-60-60 60-60-60-60 60Zm120-200h203q3-21 9-41t15-39H240v80Zm0-160h284q38-37 88.5-58.5T720-520H240v80Zm-40 242v-562 562Z"/></svg></span>
+            <span class="preorder-note-icon"
+              ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                <path
+                  d="m691-150 139-138-42-42-97 95-39-39-42 43 81 81ZM240-600h480v-80H240v80ZM720-40q-83 0-141.5-58.5T520-240q0-83 58.5-141.5T720-440q83 0 141.5 58.5T920-240q0 83-58.5 141.5T720-40ZM120-80v-680q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v267q-19-9-39-15t-41-9v-243H200v562h243q5 31 15.5 59T486-86l-6 6-60-60-60 60-60-60-60 60-60-60-60 60Zm120-200h203q3-21 9-41t15-39H240v80Zm0-160h284q38-37 88.5-58.5T720-520H240v80Zm-40 242v-562 562Z"
+                /></svg
+            ></span>
             <div>
               <strong class="preorder-note-title">Sistem Pre-Order</strong>
               <span class="preorder-note-desc"> Produk dibuat fresh setelah pesanan dikonfirmasi. Estimasi pembuatan 1–2 hari. Admin akan menginformasikan jadwal pengiriman atau pengambilan via WhatsApp. </span>
@@ -1001,13 +1122,14 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- FOOTER -->
     <footer>
       <div class="container">
         <div class="footer-grid">
           <div>
-            <img src="assets/img/logo.png" alt="Holy Shot!" style="height:36px; margin-bottom:12px;">
+            <img src="assets/img/logo.png" alt="Holy Shot!" style="height: 36px; margin-bottom: 12px" loading="lazy" />
             <div class="footer-brand">HOLY <span>SHOT!</span></div>
             <p class="footer-desc">Minuman sehat alami tanpa gula tambahan. Dibuat segar dengan 100% bahan pilihan untuk tubuh yang lebih sehat setiap hari.</p>
           </div>
@@ -1019,8 +1141,8 @@
           </div>
           <div class="footer-col">
             <h5>Hubungi Kami</h5>
-            <a href="https://instagram.com/yourholyshot" target="_blank">Instagram: @yourholyshot</a>
-            <a href="https://wa.me/6282228051397" target="_blank">WhatsApp Admin: +6282228051397</a>
+            <a href="https://instagram.com/yourholyshot" target="_blank" rel="noopener noreferrer">Instagram: @yourholyshot</a>
+            <a href="https://wa.me/6282228051397" target="_blank" rel="noopener noreferrer">WhatsApp Admin: +6282228051397</a>
           </div>
         </div>
         <div class="footer-bottom">&copy; 2026 Holy Shot! — All rights reserved.</div>

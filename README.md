@@ -23,6 +23,7 @@ https://your-holy-shot.vercel.app/
 
 ### 🥤 Katalog Produk
 - Shot! Series
+- Stacked card carousel untuk memilih produk Shot! Series
 - Pure Series
 - Tepache
 - Paket Bundling
